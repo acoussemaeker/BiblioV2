@@ -18,23 +18,6 @@ function Start() {
     return false; // on desactive le lien
 }
 
-function UserLogged(data) {
-    var URL = "View/UserHeader.php"; // on recuperer l' adresse du lien
-    $.ajax({// ajax
-        url: URL, // url de la page à charger
-        cache: false, // pas de mise en cache
-        dataType: 'text',
-        type: 'POST',
-        success: function (url) {// si la requête est un succès
-            $("#header").empty(); // on vide le div
-            $("#header").append(url); // on met dans le div le résultat de la requête ajax
-        },
-        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
-        }
-    });
-    return false; // on desactive le lien
-}
-
 function Verif(){
     if($('#Login').val() == ""){
         alert("veuillez remplir le Login");
@@ -42,13 +25,13 @@ function Verif(){
         if($('#Password').val()==""){
             alert("veuillez remplir le Password");
         }else{
-                UserLog();
+            UserLog();
         }
     }
 }
 
 function UserLog() {
-    var URL = "php/WSController.php?ws=connexion&action=Connect"; // on recuperer l' adresse du lien
+    var URL = "php/WSController.php?ws=User&action=Connect"; // on recuperer l' adresse du lien
     var params = {
         'Login' : $('#Login').val(),
         'Password' : $('#Password').val()
@@ -62,15 +45,39 @@ function UserLog() {
         success: function (data) {// si la requête est un succès
             if(data == "false")
             {
-                alert(error);
+                alert("erreur dans la connexion");
             }else{
-                alert(data);
                 UserLogged(); // on met dans le div le résultat de la requête ajax
 
             }
-       },
+        },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
     return false; // on desactive le lien
+}
+
+function UserLogged(data) {
+    var URL = "View/UserHeader.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (url) {// si la requête est un succès
+
+            LoadHeaderUser();
+            $("#header").empty(); // on vide le div
+            $("#header").append(url); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
+}
+
+function LoadHeaderUser(){
+    alert("toto");
+    $("#Pseudo").empty(); // on vide le div
+    $("#Pseudo").append("tata");
 }

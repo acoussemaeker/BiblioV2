@@ -5,7 +5,6 @@
  * Date: 13/10/2015
  * Time: 21:20
  */
-
 require 'IWebServiciable.php';
 include '/Database/db_connect.php';
 
@@ -16,7 +15,7 @@ const PARAM_Password ='Password';
 const SQL_GET_User = "SELECT id, Pseudo, Password, Grade FROM user WHERE Pseudo= '%s'";
 
 
-class WS_Connexion implements IWebServiciable {
+class WS_User implements IWebServiciable {
 
     public function doGet() {
         return $this->DoPost();
@@ -50,13 +49,18 @@ class WS_Connexion implements IWebServiciable {
                 ));
 
 
-            $result = MySQL::GetResult()->fetchAll();
-            return $result;
-//            if($result->Password == $_REQUEST[PARAM_Password]){
-//                return $result;
-//            }else{
-//                return false;
-//            }
+            $result = MySQL::GetResult()->fetch();
+            if($result == null){
+                return false;
+            }
+            else if($result->Password == $_REQUEST[PARAM_Password]){
+                session_start();
+                $_SESSION['connexion']=$result;
+                return true;
+            }else{
+                return false;
+            }
+
         }
     }
 

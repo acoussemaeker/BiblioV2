@@ -12,7 +12,14 @@
                 <a class="navbar-brand" href="#">
                     <img alt="Bibliothèque Audio V2" src="...">
                 </a>
+                    <label id="Pseudo">user</label>
                     <button type="button" class="btn btn-default" onclick="Start()">Deco</button>
             </div>
         </div>
     </nav>
+
+<script>
+    $(document).ready(fonction(){
+        LoadHeaderUser();
+    });
+</script>
