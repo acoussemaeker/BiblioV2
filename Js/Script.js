@@ -47,7 +47,7 @@ function UserLog() {
             {
                 alert("erreur dans la connexion");
             }else{
-                UserLogged(); // on met dans le div le résultat de la requête ajax
+                HeaderUserLog(); // on met dans le div le résultat de la requête ajax
 
             }
         },
@@ -57,7 +57,7 @@ function UserLog() {
     return false;
 }
 
-function UserLogged() {
+function HeaderUserLog() {
     var URL = "View/UserHeader.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -90,13 +90,31 @@ function LoadDataHeader() {
             } else {
                 $("#PseudoHeader").empty();
                 $("#PseudoHeader").append("Vous êtes connectez en temps que : " +dataa.Pseudo);
-                LoadProfilView();
+                LoadLeftMenuView();
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
     return false;
+}
+
+function LoadLeftMenuView(){
+    var URL = "View/MenuGauche.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (url) {// si la requête est un succès
+            $("#LeftMenu").empty(); // on vide le div
+            $("#LeftMenu").append(url); // on met dans le div le résultat de la requête ajax
+            LoadProfilView();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
 }
 
 function LoadProfilView(){
