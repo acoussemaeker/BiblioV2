@@ -14,7 +14,8 @@ $_SESSION['connexion'] = null;
                     <input type="text" class="form-control" id="Login" placeholder="login">
                     <input type="text" class="form-control" id="Password" placeholder="mdp">
                 </div>
-                <button type="button" class="btn btn-default" onclick="Verif()">login</button>
+                <input type="button" class="btn btn-default" onclick="Verif()" value="Login">
+                <input type="button" class="btn btn-default" value="Inscription"/>
             </form>
         </div>
     </div>
