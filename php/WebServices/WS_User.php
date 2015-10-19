@@ -11,9 +11,14 @@ include '/Database/db_connect.php';
 const PARAM_ACTION = 'action';
 const PARAM_Login ='Login';
 const PARAM_Password ='Password';
+const PARAM_RePassword ='RePassword';
+const PARAM_Mail ='Mail';
+const PARAM_ReMail ='ReMail';
 const GET_Connect = 'Connect';
 const GET_User = 'GetUser';
-const SQL_GET_User = "SELECT id, Pseudo, Password, Mail, Grade FROM user WHERE Pseudo= '%s'";
+const MODIF_User = 'ModifUser';
+const SQL_GET_User = "SELECT Id, Pseudo, Password, Mail, Grade FROM user WHERE Pseudo= '%s'";
+const SQL_UPGRADE_User = "UPDATE user SET Pseudo='%s',Password='%s',Mail='%s' WHERE Id= '%d'";
 
 
 class WS_User implements IWebServiciable {
@@ -33,6 +38,8 @@ class WS_User implements IWebServiciable {
                 return $this->Connect();
             case GET_User:
                 return $this->GetUser();
+            case MODIF_User:
+                return $this->ModifUser();
             default:
                 Helper::ThrowAccessDenied();
                 break;
@@ -41,29 +48,22 @@ class WS_User implements IWebServiciable {
 
     private function Connect()
     {
-        if(!isset($_REQUEST[PARAM_Login]))
-        {
-            Helper::ThrowAccessDenied();
+        MySQL::Execute(
+            sprintf(SQL_GET_User,
+                $_REQUEST[PARAM_Login]
+            ));
+
+
+        $result = MySQL::GetResult()->fetch();
+        if($result == null){
+            return false;
         }
-        else{
-            MySQL::Execute(
-                sprintf(SQL_GET_User,
-                    $_REQUEST[PARAM_Login]
-                ));
-
-
-            $result = MySQL::GetResult()->fetch();
-            if($result == null){
-                return false;
-            }
-            else if($result->Password == $_REQUEST[PARAM_Password]){
-                session_start();
-                $_SESSION['connexion']=$result;
-                return true;
-            }else{
-                return false;
-            }
-
+        else if($result->Password == $_REQUEST[PARAM_Password]){
+            session_start();
+            $_SESSION['connexion']=$result;
+            return true;
+        }else{
+            return false;
         }
     }
 
@@ -81,6 +81,34 @@ class WS_User implements IWebServiciable {
         }
         else{
             return $result;
+        }
+    }
+
+    private function ModifUser()
+    {
+        session_start();
+        if (!isset($_REQUEST[PARAM_Password]) ||
+            !isset($_REQUEST[PARAM_RePassword]) ||
+            !isset($_REQUEST[PARAM_Mail]) ||
+            !isset($_REQUEST[PARAM_ReMail]) ||
+            !isset($_REQUEST[PARAM_Login]))
+        {
+            Helper::ThrowRequestError();
+        }
+
+        if($_REQUEST[PARAM_Password]==$_REQUEST[PARAM_RePassword] && $_REQUEST[PARAM_Mail]==$_REQUEST[PARAM_ReMail] )
+        {
+            MySQL::Execute(
+            sprintf(SQL_UPGRADE_User,
+                $_REQUEST[PARAM_Login],
+                $_REQUEST[PARAM_Password],
+                $_REQUEST[PARAM_Mail],
+                $_SESSION['connexion']->Id
+                ));
+            return true;
+        }
+        else{
+            return false;
         }
     }
 

@@ -161,3 +161,80 @@ function LoadDataProfil(){
     });
     return false;
 }
+
+function LoadModifProfilUser(){
+    var URL = "View/ModifProfilUser.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (url) {// si la requête est un succès
+            $("#contain").empty(); // on vide le div
+            $("#contain").append(url); // on met dans le div le résultat de la requête ajax
+            LoadModifProfilDataUSer();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
+}
+
+function LoadModifProfilDataUSer(){
+    var URL = "php/WSController.php?ws=User&action=GetUser";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            console.log(dataa);
+            if (data == "false") {
+                alert("erreur dans la connexion");
+            } else {
+                $("#Login").empty();
+                $("#Login").val(dataa.Pseudo);
+                $("#Password").empty();
+                $("#Password").val(dataa.Password);
+                $("#RePassword").empty();
+                $("#RePassword").val(dataa.Password);
+                $("#Mail").empty();
+                $("#Mail").val(dataa.Mail);
+                $("#ReMail").empty();
+                $("#ReMail").val(dataa.Mail);
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
+}
+
+function ModifProfilUserData(){
+    var URL = "php/WSController.php?ws=User&action=ModifUser";
+    var params = {
+        'Login' : $('#Login').val(),
+        'Password' : $('#Password').val(),
+        'RePassword' : $('#RePassword').val(),
+        'Mail' : $('#Mail').val(),
+        'ReMail' : $('#ReMail').val()
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data : params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if (data == "false") {
+                alert("erreur dans la connexion");
+            } else {
+                alert(data);
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
+}

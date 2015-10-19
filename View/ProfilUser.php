@@ -16,6 +16,6 @@
             <label for="contenu">Mail</label>
             <input type="email" placeholder="Email" id="Email" class="form-control"/>
         </div>
-        <input type="button" class="btn btn-default" id="Sauvegarder" value="Modifier"  />
+        <input type="button" class="btn btn-default" id="Sauvegarder" value="Modifier" onclick="LoadModifProfilUser()" />
     </div>
 </div>
