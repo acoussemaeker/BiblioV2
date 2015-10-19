@@ -40,11 +40,18 @@ body, html{
 {
     height: 100%;
     width: 100%;
-    background-color: lightgray;
+    background-color: #e9eaed;
 }
 
 .milieuPage{
     align:center;
     margin-left:15%;
     margin-right:20%;
+}
+
+.menu-gauche
+{
+    background-color: grey;
+    width: 100%;
+    height: 100%;
 }

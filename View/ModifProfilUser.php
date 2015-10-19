@@ -11,11 +11,18 @@
             <label for="contenu">Mot de passe</label>
             <input type="password" placeholder="Password" id="Password" class="form-control"/>
         </div>
-
+        <div class="form-group">
+            <label for="contenu">confirmer le mot de passe</label>
+            <input type="password" placeholder="Password" id="Password" class="form-control"/>
+        </div>
         <div class="form-group">
             <label for="contenu">Mail</label>
             <input type="email" placeholder="Email" id="Email" class="form-control"/>
         </div>
-        <input type="button" class="btn btn-default" id="Sauvegarder" value="Modifier"  />
+        <div class="form-group">
+            <label for="contenu">Confirmer le mail</label>
+            <input type="email" placeholder="Email" id="Email" class="form-control"/>
+        </div>
+        <input type="button" class="btn btn-success" id="Sauvegarder" value="Sauvegarder"  />
     </div>
 </div>
