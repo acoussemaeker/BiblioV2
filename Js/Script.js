@@ -31,7 +31,7 @@ function Verif(){
 }
 
 function UserLog() {
-    var URL = "php/WSController.php?ws=User&action=Connect"; // on recuperer l' adresse du lien
+    var URL = "php/WSController.php?ws=User&action=Connect";
     var params = {
         'Login' : $('#Login').val(),
         'Password' : $('#Password').val()
@@ -54,10 +54,10 @@ function UserLog() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
+    return false;
 }
 
-function UserLogged(data) {
+function UserLogged() {
     var URL = "View/UserHeader.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -65,10 +65,9 @@ function UserLogged(data) {
         dataType: 'text',
         type: 'POST',
         success: function (url) {// si la requête est un succès
-
-            LoadHeaderUser();
             $("#header").empty(); // on vide le div
             $("#header").append(url); // on met dans le div le résultat de la requête ajax
+            LoadHeaderUser();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -77,7 +76,6 @@ function UserLogged(data) {
 }
 
 function LoadHeaderUser(){
-    alert("toto");
-    $("#Pseudo").empty(); // on vide le div
-    $("#Pseudo").append("tata");
+    //$("#Pseudo").empty(); // on vide le div
+    //$("#Pseudo").append("titi");
 }
