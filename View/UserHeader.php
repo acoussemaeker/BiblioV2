@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav navbar-right" >
                  <label id="PseudoHeader">user</label>
-                 <input type="button" class="btn btn-default navbar-btn"  value="Déconnexion" onclick="Start()" />
+                 <input type="button" class="btn btn-default navbar-btn"  value="Déconnexion" onclick="Disconnect()" />
             </ul>
             </div>
         </div>

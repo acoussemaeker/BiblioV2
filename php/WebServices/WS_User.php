@@ -15,11 +15,13 @@ const PARAM_RePassword ='RePassword';
 const PARAM_Mail ='Mail';
 const PARAM_ReMail ='ReMail';
 const GET_Connect = 'Connect';
+const Disconnect = 'Disconnect';
 const GET_User = 'GetUser';
 const MODIF_User = 'ModifUser';
+const Create_User = 'CreateUser';
 const SQL_GET_User = "SELECT Id, Pseudo, Password, Mail, Grade FROM user WHERE Pseudo= '%s'";
 const SQL_UPGRADE_User = "UPDATE user SET Pseudo='%s',Password='%s',Mail='%s' WHERE Id= '%d'";
-
+const SQL_CREATE_User = "INSERT INTO user(Pseudo, Password, Mail, Grade) VALUES ('%s', '%s', '%s', '0')";
 
 class WS_User implements IWebServiciable {
 
@@ -38,8 +40,12 @@ class WS_User implements IWebServiciable {
                 return $this->Connect();
             case GET_User:
                 return $this->GetUser();
+            case Disconnect:
+                return $this->Disconnect();
             case MODIF_User:
                 return $this->ModifUser();
+            case Create_User:
+                return $this->CreateUser();
             default:
                 Helper::ThrowAccessDenied();
                 break;
@@ -98,6 +104,7 @@ class WS_User implements IWebServiciable {
 
         if($_REQUEST[PARAM_Password]==$_REQUEST[PARAM_RePassword] && $_REQUEST[PARAM_Mail]==$_REQUEST[PARAM_ReMail] )
         {
+            alert('toto');
             MySQL::Execute(
             sprintf(SQL_UPGRADE_User,
                 $_REQUEST[PARAM_Login],
@@ -112,6 +119,34 @@ class WS_User implements IWebServiciable {
         }
     }
 
+    private function CreateUser()
+    {
+        session_start();
+        if (!isset($_REQUEST[PARAM_Password]) ||
+            !isset($_REQUEST[PARAM_RePassword]) ||
+            !isset($_REQUEST[PARAM_Mail]) ||
+            !isset($_REQUEST[PARAM_ReMail]) ||
+            !isset($_REQUEST[PARAM_Login]))
+        {
+            Helper::ThrowRequestError();
+        }
+
+        MySQL::Execute(
+            $toto = sprintf(SQL_CREATE_User,
+                $_REQUEST[PARAM_Login],
+                $_REQUEST[PARAM_Password],
+                $_REQUEST[PARAM_Mail]
+            ));
+        return true;
+    }
+
+
+    private function Disconnect()
+    {
+        session_start();
+        $_SESSION['connexion']= null;
+        return true;
+    }
 
     public function doPut() {
         Helper::ThrowAccessDenied();

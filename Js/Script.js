@@ -10,12 +10,36 @@ function Start() {
         type: 'POST',
         success: function (data) {// si la requête est un succès
             $("#header").empty(); // on vide le div
+            $("#contain").empty();
+            $("#LeftMenu").empty();
             $("#header").append(data); // on met dans le div le résultat de la requête ajax
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
     return false; // on desactive le lien
+}
+
+function Disconnect() {
+    var URL = "php/WSController.php?ws=User&action=Disconnect";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "false")
+            {
+                alert("erreur dans la connexion");
+            }else{
+                Start(); // on met dans le div le résultat de la requête ajax
+
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
 }
 
 function Verif(){
@@ -33,8 +57,8 @@ function Verif(){
 function UserLog() {
     var URL = "php/WSController.php?ws=User&action=Connect";
     var params = {
-        'Login' : $('#Login').val(),
-        'Password' : $('#Password').val()
+        'Login' : $('#LoginHeader').val(),
+        'Password' : $('#PasswordHeader').val()
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -231,6 +255,53 @@ function ModifProfilUserData(){
                 alert("erreur dans la connexion");
             } else {
                 alert(data);
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
+}
+
+function LoadCreateProfilView(){
+    var URL = "View/NewUser.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (url) {// si la requête est un succès
+            $("#contain").empty(); // on vide le div
+            $("#contain").append(url); // on met dans le div le résultat de la requête ajax
+            LoadDataProfil();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
+}
+
+function AddUser(){
+    var URL = "php/WSController.php?ws=User&action=CreateUser";
+    var params = {
+        'Login' : $('#Login').val(),
+        'Password' : $('#Password').val(),
+        'RePassword' : $('#RePassword').val(),
+        'Mail' : $('#Mail').val(),
+        'ReMail' : $('#ReMail').val()
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data: params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "true"){
+                alert ("Utilisateur enregister")
+            }
+            else{
+                alert("Erreur dans l'enregistrement")
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete

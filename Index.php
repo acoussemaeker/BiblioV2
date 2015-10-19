@@ -16,8 +16,5 @@
 </html>
 
 <?php
-//session_start();
-//$_SESSION['connexion'] = null;
-
 include "php/Database/db_credentials.php";
 include "php/ViewController.php";

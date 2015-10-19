@@ -1,6 +1,5 @@
 <?php
-session_start();
-$_SESSION['connexion'] = null;
+
 ?>
 
 <nav class="navbar navbar-default">
@@ -11,11 +10,11 @@ $_SESSION['connexion'] = null;
             </a>
             <form class="navbar-form navbar-right" >
                 <div class="form-group">
-                    <input type="text" class="form-control" id="Login" placeholder="login">
-                    <input type="text" class="form-control" id="Password" placeholder="mdp">
+                    <input type="text" class="form-control" id="LoginHeader" placeholder="login">
+                    <input type="text" class="form-control" id="PasswordHeader" placeholder="mdp">
                 </div>
                 <input type="button" class="btn btn-default" onclick="Verif()" value="Login">
-                <input type="button" class="btn btn-default" value="Inscription"/>
+                <input type="button" class="btn btn-default" value="Inscription" onclick="LoadCreateProfilView()"/>
             </form>
         </div>
     </div>
