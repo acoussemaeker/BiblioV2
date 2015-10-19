@@ -13,7 +13,7 @@ const PARAM_Login ='Login';
 const PARAM_Password ='Password';
 const GET_Connect = 'Connect';
 const GET_User = 'GetUser';
-const SQL_GET_User = "SELECT id, Pseudo, Password, Grade FROM user WHERE Pseudo= '%s'";
+const SQL_GET_User = "SELECT id, Pseudo, Password, Mail, Grade FROM user WHERE Pseudo= '%s'";
 
 
 class WS_User implements IWebServiciable {

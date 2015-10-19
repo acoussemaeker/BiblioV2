@@ -67,7 +67,7 @@ function UserLogged() {
         success: function (url) {// si la requête est un succès
             $("#header").empty(); // on vide le div
             $("#header").append(url); // on met dans le div le résultat de la requête ajax
-            LoadHeaderUser();
+            LoadDataHeader();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -75,7 +75,7 @@ function UserLogged() {
     return false; // on desactive le lien
 }
 
-function LoadHeaderUser() {
+function LoadDataHeader() {
     var URL = "php/WSController.php?ws=User&action=GetUser";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -88,7 +88,8 @@ function LoadHeaderUser() {
             if (data == "false") {
                 alert("erreur dans la connexion");
             } else {
-                $("#PseudoHeader").append("Vous êtes connectez en temps que " +dataa.Pseudo);
+                $("#PseudoHeader").empty();
+                $("#PseudoHeader").append("Vous êtes connectez en temps que : " +dataa.Pseudo);
                 LoadProfilView();
             }
         },
@@ -117,5 +118,28 @@ function LoadProfilView(){
 }
 
 function LoadDataProfil(){
-    alert("toto");
+    var URL = "php/WSController.php?ws=User&action=GetUser";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            console.log(dataa);
+            if (data == "false") {
+                alert("erreur dans la connexion");
+            } else {
+                $("#Pseudo").empty();
+                $("#Pseudo").val(dataa.Pseudo);
+                $("#Password").empty();
+                $("#Password").val(dataa.Password);
+                $("#Email").empty();
+                $("#Email").val(dataa.Mail);
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
 }
