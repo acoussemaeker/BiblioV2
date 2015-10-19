@@ -19,5 +19,5 @@
 //session_start();
 //$_SESSION['connexion'] = null;
 
-include"BddAccess.php";
-include"Controller/ViewController.php";
+include "php/Database/db_credentials.php";
+include "php/ViewController.php";

@@ -48,7 +48,7 @@ function Verif(){
 }
 
 function UserLog() {
-    var URL = "Controller/WsController.php"; // on recuperer l' adresse du lien
+    var URL = "php/WSController.php?ws=connexion&action=Connect"; // on recuperer l' adresse du lien
     var params = {
         'Login' : $('#Login').val(),
         'Password' : $('#Password').val()
@@ -58,12 +58,13 @@ function UserLog() {
         data: params,
         cache: false, // pas de mise en cache
         dataType: 'text',
-        type: 'POST',
+        type: 'GET',
         success: function (data) {// si la requête est un succès
             if(data == "false")
             {
-                alert("error");
+                alert(error);
             }else{
+                alert(data);
                 UserLogged(); // on met dans le div le résultat de la requête ajax
 
             }
