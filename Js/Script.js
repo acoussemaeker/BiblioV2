@@ -127,7 +127,7 @@ function LoadDataProfil() {
                 alert("erreur dans la connexion");
             } else {
                 $("#PseudoHeader").empty(); // on vide le div
-                $("#PseudoHeader").append("Vous êtes connectez en temps que " +data.Pseudo);
+                $("#PseudoHeader").append("Vous êtes connectez en temps que " +data.pseudo);
                 LoadProfilView();
             }
         },
