@@ -22,18 +22,22 @@ class WS_Connexion implements IWebServiciable {
     }
 
     public function doGet() {
-
+        return $this->doPOST();
     }
 
-    public function doPost() {
+    public function doPOST() {
         try {
             $cnx = BddAccess::getInstance();
 
             $SQL = "SELECT id, Pseudo, Password, Grade FROM user WHERE Pseudo='".$this->requestParams['Login']."'";
             $rs = $cnx->query($SQL);
-            while ($info = $rs->fetch_object()) {
-                return (json_encode($info));
-            }
+            $info = $rs->fetch_object();
+
+                if($info->Password == $this->requestParams['Password']){
+                    return $info;
+                }else {
+                    return false;
+                }
         }
         catch(Exception $e){
             return false;
@@ -53,9 +57,7 @@ class WS_Connexion implements IWebServiciable {
     }
 
     public function doNeedAuth() {
-        return true;
+        return false;
     }
-
-
 }
 

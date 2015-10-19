@@ -12,7 +12,6 @@
                 <a class="navbar-brand" href="#">
                     <img alt="Bibliothèque Audio V2" src="...">
                 </a>
-                <label id="Pseudo">tt </label>
                     <button type="button" class="btn btn-default" onclick="Start()">Deco</button>
             </div>
         </div>

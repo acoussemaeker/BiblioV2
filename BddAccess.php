@@ -16,5 +16,4 @@ class BddAccess {
         $cnx->set_charset("utf8");
         return $cnx;
     }
-
 }

@@ -8,7 +8,7 @@ interface IWebServiciable {
 
     public function doRequest();
     public function doGet();
-    public function doPost();
+    public function doPOST();
     public function doPut();
     public function doDelete();
     public function doNeedAuth();

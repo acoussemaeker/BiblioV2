@@ -16,5 +16,8 @@
 </html>
 
 <?php
+//session_start();
+//$_SESSION['connexion'] = null;
+
 include"BddAccess.php";
-include"Controller/ViewController.php"; 
+include"Controller/ViewController.php";

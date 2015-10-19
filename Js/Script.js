@@ -28,7 +28,6 @@ function UserLogged(data) {
         success: function (url) {// si la requête est un succès
             $("#header").empty(); // on vide le div
             $("#header").append(url); // on met dans le div le résultat de la requête ajax
-            document.getElementById("Pseudo")== data;
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -36,10 +35,20 @@ function UserLogged(data) {
     return false; // on desactive le lien
 }
 
-
+function Verif(){
+    if($('#Login').val() == ""){
+        alert("veuillez remplir le Login");
+    }else{
+        if($('#Password').val()==""){
+            alert("veuillez remplir le Password");
+        }else{
+                UserLog();
+        }
+    }
+}
 
 function UserLog() {
-    var URL = "Controller/WSController.php"; // on recuperer l' adresse du lien
+    var URL = "Controller/WsController.php"; // on recuperer l' adresse du lien
     var params = {
         'Login' : $('#Login').val(),
         'Password' : $('#Password').val()
@@ -51,13 +60,14 @@ function UserLog() {
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "")
+            if(data == "false")
             {
                 alert("error");
+            }else{
+                UserLogged(); // on met dans le div le résultat de la requête ajax
+
             }
-            UserLogged(data);
-            document.getElementById("Pseudo")== data;
-        },
+       },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
