@@ -34,8 +34,18 @@
       <file leaf-file-name="Script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Js/Script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3065" max-vertical-offset="4165">
-              <caret line="195" column="25" selection-start-line="195" selection-start-column="25" selection-end-line="195" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="3558" max-vertical-offset="4454">
+              <caret line="241" column="28" selection-start-line="241" selection-start-column="9" selection-end-line="241" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MenuGauche.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/View/MenuGauche.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.37126437" vertical-offset="0" max-vertical-offset="870">
+              <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -61,10 +71,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WS_User.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WS_User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56666666" vertical-offset="1224" max-vertical-offset="2125">
+            <state vertical-scroll-proportion="-18.961538" vertical-offset="1224" max-vertical-offset="2125">
               <caret line="106" column="19" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="false" />
@@ -127,16 +137,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Css/Style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1054">
-              <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -170,9 +170,10 @@
         <option value="$PROJECT_DIR$/Index.php" />
         <option value="$PROJECT_DIR$/View/ProfilUser.php" />
         <option value="$PROJECT_DIR$/View/ModifProfilUser.php" />
-        <option value="$PROJECT_DIR$/Js/Script.js" />
         <option value="$PROJECT_DIR$/error.php" />
         <option value="$PROJECT_DIR$/php/WebServices/WS_User.php" />
+        <option value="$PROJECT_DIR$/Js/Script.js" />
+        <option value="$PROJECT_DIR$/View/MenuGauche.php" />
       </list>
     </option>
   </component>
@@ -429,16 +430,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/php/Database/db_connect.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1428">
-          <caret line="41" column="27" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
-          <folding>
-            <element signature="e#6#89#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/error.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="255">
@@ -839,14 +830,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Js/Script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3065" max-vertical-offset="4165">
-          <caret line="195" column="25" selection-start-line="195" selection-start-column="25" selection-end-line="195" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/WebServices/IWebServiciable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="238">
@@ -875,13 +858,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56666666" vertical-offset="1224" max-vertical-offset="2125">
+        <state vertical-scroll-proportion="-18.961538" vertical-offset="1224" max-vertical-offset="2125">
           <caret line="106" column="19" selection-start-line="106" selection-start-column="19" selection-end-line="106" selection-end-column="19" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="false" />
             <marker date="1445289879812" expanded="true" signature="458:527" placeholder="SELECT Id, P..user..." />
             <marker date="1445289879812" expanded="true" signature="556:622" placeholder="UPDATE user ..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Js/Script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3558" max-vertical-offset="4454">
+          <caret line="241" column="28" selection-start-line="241" selection-start-column="9" selection-end-line="241" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/MenuGauche.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37126437" vertical-offset="0" max-vertical-offset="870">
+          <caret line="19" column="6" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>

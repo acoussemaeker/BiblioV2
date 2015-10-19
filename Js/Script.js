@@ -238,3 +238,20 @@ function ModifProfilUserData(){
     });
     return false;
 }
+
+function LoadGestionPlaylist(){
+    var URL = "View/GestionPlaylist.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (url) {// si la requête est un succès
+            $("#contain").empty(); // on vide le div
+            $("#contain").append(url); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
+}
