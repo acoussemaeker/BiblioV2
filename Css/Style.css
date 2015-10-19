@@ -35,3 +35,16 @@ body, html{
     width: 85%;
     height: 92%;
 }
+
+.nouveau
+{
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+}
+
+.milieuPage{
+    align:center;
+    margin-left:15%;
+    margin-right:20%;
+}
