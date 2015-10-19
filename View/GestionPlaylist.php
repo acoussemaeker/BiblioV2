@@ -29,4 +29,5 @@
             </tr>
         </tbody>
     </table>
+    <input type="button" value="Nouvelle playlist" class="btn btn-success"/>
 </div>
