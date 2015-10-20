@@ -14,7 +14,13 @@
                   Titre
             </th>
             <th>
-                Format
+                Play
+            </th>
+            <th>
+               Ordre
+            </th>
+            <th>
+                
             </th>
             </thead>
         </table>
@@ -31,7 +37,13 @@
                   Titre
             </th>
             <th>
-                Format
+                Play
+            </th>
+            <th>
+               Ordre
+            </th>
+            <th>
+                
             </th>
             </thead>
         </table>
