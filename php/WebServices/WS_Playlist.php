@@ -10,10 +10,13 @@ include '/Database/db_connect.php';
 
 const PARAM_ACTION = 'action';
 const PARAM_Titre = 'Titre';
+const PARAM_PlaylistID ="PlaylistID";
 const ADD_Playlist ="AddPlaylist";
 const GET_Playlist ="GetPlaylist";
+const DELETE_Playlist ="DeletePlaylist";
 const SQL_CREATE_Playlist ="INSERT INTO playlist(UserId, Nom) VALUES ('%s', '%s')";
 const SQL_GET_Playlist ="SELECT Id, UserId, Nom FROM playlist WHERE UserId='%s'";
+const SQL_DELETE_PLAYLIST ="DELETE FROM playlist WHERE Id='%s'";
 
 class WS_Playlist implements IWebServiciable {
 
@@ -32,6 +35,8 @@ class WS_Playlist implements IWebServiciable {
                 return $this->AddPlaylist();
             case GET_Playlist :
                 return $this->GetPlaylist();
+            case DELETE_Playlist :
+                return $this->DeletePlaylist();
             default:
                 Helper::ThrowAccessDenied();
                 break;
@@ -61,6 +66,15 @@ class WS_Playlist implements IWebServiciable {
         else{
             return $result;
         }
+    }
+
+    private function DeletePlaylist(){
+        session_start();
+        MySQL::Execute(
+            $toto =sprintf(SQL_DELETE_PLAYLIST,
+                $_REQUEST[PARAM_PlaylistID]
+            ));
+        return true;
     }
 
     public function doPut() {

@@ -350,8 +350,7 @@ function LoadDataPlaylist(){
                 alert("Aucune Playlist Trouvé");
             } else {
                 for (var t in dataa) {
-                    $('#TabPlaylist').append("<tr> <td>" + dataa[t].Nom + "</td><td><audio controls=\"controls\"></audio></td><td><div class=\"btn-group\" role=\"group\" ><button type=\"button\" class=\"btn btn-default\" onclick=\"LoadDetailPlaylist("+dataa[t].Id+")\">Afficher</button> <button type=\"button\" class=\"btn btn-danger\">Supprimer</button> </div> </td> </tr>");
-
+                    $('#TabPlaylist').append("<tr> <td>" + dataa[t].Nom + "</td><td><audio controls=\"controls\"></audio></td><td><div class=\"btn-group\" role=\"group\" ><button type=\"button\" class=\"btn btn-default\" onclick=\"LoadDetailPlaylist()\">Afficher</button> <button type=\"button\" class=\"btn btn-danger\" onclick=\"DeletePlaylist("+dataa[t].Id+")\">Supprimer</button> </div> </td> </tr>");
                 }
             }
         },
@@ -370,6 +369,30 @@ function LoadDetailPlaylist(){
         success: function (data) {// si la requête est un succès
             $("#contain").empty();
             $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function DeletePlaylist(data){
+    var URL = "php/WSController.php?ws=Playlist&action=DeletePlaylist";
+    var params = {
+        'PlaylistID' : data
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data: params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "true"){
+                alert ("Playlist Supprimer de votre Bibliotheque")
+            }
+            else{
+                alert("Erreur dans l'enregistrement")
+            }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
