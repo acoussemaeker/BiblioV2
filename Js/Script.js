@@ -54,10 +54,8 @@ function Check() {
             if(data == "false")
             {
                 LaodDataCommonLibraryDisconnect();
-                alert("false");
             }else{
                 LaodDataCommonLibraryConnect();
-                alert("true");
 
             }
         },
