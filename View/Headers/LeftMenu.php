@@ -14,7 +14,7 @@
                 <li class="btn-info"><a href="#" onclick="LoadPersonalLibrary()">Bibliothèque Personel</a></li>
                 <li class="btn-info"><a href="#" onclick="LoadGestionPlaylist()">Gestion des playlist</a></li>
                 <li class="btn-info"><a href="#" onclick="LoadProfilView()">Gestion du profile</a></li>
-                <li class="btn-info"><a href="#" onclick=""> Faire une demande</a></li>
+                <li class="btn-info"><a href="#" onclick="LoadDoAskView()"> Faire une demande</a></li>
             </ul>
                        ';
                 break;

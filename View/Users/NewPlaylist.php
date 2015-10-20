@@ -27,6 +27,6 @@
             </thead>
         </table>
 
-        <input type="button" class="btn btn-success" id="Sauvegarder" value="Sauvegarder"  />
+        <input type="button" class="btn btn-success" id="Sauvegarder" value="Sauvegarder" onclick="CreateNewPlaylist()" />
     </div>
 </div>

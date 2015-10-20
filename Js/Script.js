@@ -141,7 +141,7 @@ function LoadDataHeader() {
 }
 
 function LoadLeftMenuView(){
-    var URL = "View/Headers/MenuGauche.php"; // on recuperer l' adresse du lien
+    var URL = "View/Headers/LeftMenu.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -452,6 +452,38 @@ function LaodDataPersonalLibrary(){
 
 function LoadNewPlaylist() {
     var URL = "View/Users/NewPlaylist.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            $("#contain").empty();
+            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function CreateNewPlaylist() {
+    var URL = "View/Users/NewPlaylist.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            $("#contain").empty();
+            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function LoadDoAskView(){
+    var URL = "View/Users/DoAsk.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
