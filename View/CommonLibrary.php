@@ -1,3 +1,4 @@
+<div class="nouveau">
 <table class="table table-hover tableListe">
     <thead>
         <tr class="info">
@@ -23,3 +24,5 @@
         }
 
     echo '</table>';
+    ?>
+</div>
