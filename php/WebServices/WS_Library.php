@@ -13,9 +13,11 @@ const PARAM_AudioID= 'AudioID';
 const GET_Library = "GetLibrary";
 const GET_Library_Client = "GetLibraryClient";
 const ADD_AudioUser ="AddAudioUser";
+const DELETE_AudioUser ="DeleteAudioUser";
 const SQL_GET_LIBRARY ="SELECT Id, Nom, Emplacement FROM audio";
-const SQL_GET_LIBRARY_CLIENT ="SELECT Nom, Emplacement FROM audio LEFT JOIN useraudio On audio.Id = useraudio.AudioId WHERE useraudio.UserId= '%s'";
+const SQL_GET_LIBRARY_CLIENT ="SELECT audio.Id, Nom, Emplacement FROM audio LEFT JOIN useraudio On audio.Id = useraudio.AudioId WHERE useraudio.UserId= '%s'";
 const SQL_CREATE_AUDIOUSER ="INSERT INTO useraudio(UserId, AudioID) VALUES ('%s', '%s')";
+const SQL_DELETE_AUDIOUSER ="DELETE FROM useraudio WHERE UserId='%s' AND AudioID='%s'";
 
 class WS_Library implements IWebServiciable {
 
@@ -37,6 +39,8 @@ class WS_Library implements IWebServiciable {
                 return $this->GetLibraryClient();
             case ADD_AudioUser :
                 return$this->AddAudioUser();
+            case DELETE_AudioUser :
+                return$this->DeleteAudioUser();
             default:
                 Helper::ThrowAccessDenied();
         }
@@ -49,7 +53,8 @@ class WS_Library implements IWebServiciable {
 
     private function GetLibraryClient(){
         session_start();
-        MySQL::Execute(sprintf(SQL_GET_LIBRARY_CLIENT,
+        MySQL::Execute(
+            sprintf(SQL_GET_LIBRARY_CLIENT,
                 $_SESSION['connexion']->Id
             ));
         $result = MySQL::GetResult()->fetchAll();
@@ -65,10 +70,20 @@ class WS_Library implements IWebServiciable {
             session_start();
             MySQL::Execute(
                 sprintf(SQL_CREATE_AUDIOUSER,
-                    $_SESSION['connexion']->Id,
-                    $_REQUEST[PARAM_AudioID]
-                ));
+                $_SESSION['connexion']->Id,
+                $_REQUEST[PARAM_AudioID]
+            ));
             return true;
+    }
+
+    private function DeleteAudioUser(){
+        session_start();
+        MySQL::Execute(
+            $toto =sprintf(SQL_DELETE_AUDIOUSER,
+            $_SESSION['connexion']->Id,
+            $_REQUEST[PARAM_AudioID]
+        ));
+        return true;
     }
 
     public function doPut() {

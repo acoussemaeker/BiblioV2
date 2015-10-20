@@ -414,6 +414,54 @@ function AddAudioUser(data){
     });
 }
 
+function AddAudioUser(data){
+    var URL = "php/WSController.php?ws=Library&action=AddAudioUser";
+    var params = {
+        'AudioID' : data
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data: params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "true"){
+                alert ("Audio ajouter")
+            }
+            else{
+                alert("Erreur dans l'enregistrement")
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function DeleteAudioUser(data){
+    var URL = "php/WSController.php?ws=Library&action=DeleteAudioUser";
+    var params = {
+        'AudioID' : data
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data: params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "true"){
+                alert ("Audio Supprimer de votre Bibliotheque")
+            }
+            else{
+                alert("Erreur dans l'enregistrement")
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
 function LoadPersonalLibrary() {
     var URL = "View/Users/PersonalLibrary.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
@@ -442,7 +490,7 @@ function LaodDataPersonalLibrary(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\"/><input type=\"button\" class=\"btn btn-success\" value=\"Ajouter à une playlistl\"/> </div> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser("+dataa[t].Id+")\"/> </div> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
