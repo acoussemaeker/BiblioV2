@@ -382,7 +382,31 @@ function LaodDataCommonLibraryConnect(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\"/> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\" onclick=\"AddAudioUser("+dataa[t].Id+")\"/> </td> </tr>");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function AddAudioUser(data){
+    var URL = "php/WSController.php?ws=Library&action=AddAudioUser";
+    var params = {
+        'AudioID' : data
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data: params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "true"){
+                alert ("Audio ajouter")
+            }
+            else{
+                alert("Erreur dans l'enregistrement")
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
