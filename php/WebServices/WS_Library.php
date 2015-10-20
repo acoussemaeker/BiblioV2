@@ -64,7 +64,7 @@ class WS_Library implements IWebServiciable {
     private function AddAudioUser(){
             session_start();
             MySQL::Execute(
-                $toto = sprintf(SQL_CREATE_AUDIOUSER,
+                sprintf(SQL_CREATE_AUDIOUSER,
                     $_SESSION['connexion']->Id,
                     $_REQUEST[PARAM_AudioID]
                 ));

@@ -9,6 +9,9 @@ require 'IWebServiciable.php';
 include '/Database/db_connect.php';
 
 const PARAM_ACTION = 'action';
+const PARAM_Titre = 'Titre';
+const ADD_Playlist ="AddPlaylist";
+const SQL_CREATE_Playlist ="INSERT INTO playlist(UserId, Nom) VALUES ('%s', '%s')";
 
 class WS_Playlist implements IWebServiciable {
 
@@ -23,10 +26,22 @@ class WS_Playlist implements IWebServiciable {
 
         switch ($_REQUEST[PARAM_ACTION])
         {
+            case ADD_Playlist :
+                return $this->AddPlaylist();
             default:
                 Helper::ThrowAccessDenied();
                 break;
         }
+    }
+
+    private function AddPlaylist(){
+        session_start();
+        MySQL::Execute(
+            sprintf(SQL_CREATE_Playlist,
+                $_SESSION['connexion']->Id,
+                $_REQUEST[PARAM_Titre]
+            ));
+        return true;
     }
 
     public function doPut() {

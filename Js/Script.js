@@ -466,16 +466,24 @@ function LoadNewPlaylist() {
     });
 }
 
-function CreateNewPlaylist() {
-    var URL = "View/Users/NewPlaylist.php"; // on recuperer l' adresse du lien
+function CreateNewPlaylist(){
+    var URL = "php/WSController.php?ws=Playlist&action=AddPlaylist";
+    var params = {
+        'Titre' : $('#Titre').val()
+    };
     $.ajax({// ajax
         url: URL, // url de la page à charger
+        data: params,
         cache: false, // pas de mise en cache
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            $("#contain").empty();
-            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+            if(data == "true"){
+                alert ("Playlist Créée")
+            }
+            else{
+                alert("Erreur dans l'enregistrement")
+            }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }

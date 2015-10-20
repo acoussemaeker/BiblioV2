@@ -133,7 +133,7 @@ class WS_User implements IWebServiciable {
         }
 
         MySQL::Execute(
-            $toto = sprintf(SQL_CREATE_User,
+            sprintf(SQL_CREATE_User,
                 $_REQUEST[PARAM_Login],
                 $_REQUEST[PARAM_Password],
                 $_REQUEST[PARAM_Mail]
