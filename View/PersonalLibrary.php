@@ -19,7 +19,8 @@
     <?php
       session_start();
         if($_SESSION['connexion']->Grade !== NULL){
-        echo '<td> <input type="button" class="btn btn-success" value="ajouter a la Biblihotheque Personnel"/> </td>';
+        echo '<div class="btn-group" role="group" ><td> <input type="button" class="btn btn-danger" value="Supprimer de la Bibliotheque personnel"/> </td>';
+        echo '<td> <input type="button" class="btn btn-success" value="Ajouter à une playlistl"/> </td></div>';
         }
 
     echo '</table>';
