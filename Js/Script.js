@@ -13,7 +13,6 @@ function Start() {
             $("#contain").empty();
             $("#LeftMenu").empty();
             $("#header").append(data); // on met dans le div le résultat de la requête ajax
-            LoadCommonLibrary();
             LoadLeftMenuView();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -110,7 +109,7 @@ function LoadDataHeader() {
         type: 'POST',
         success: function (data) {// si la requête est un succès
             var dataa = JSON.parse(data);
-            console.log(dataa);
+            //console.log(dataa);
             if (data == "false") {
                 alert("erreur dans la connexion");
             } else {
@@ -170,7 +169,7 @@ function LoadDataProfil(){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             var dataa = JSON.parse(data);
-            console.log(dataa);
+            //console.log(dataa);
             if (data == "false") {
                 alert("erreur dans la connexion");
             } else {
@@ -215,7 +214,7 @@ function LoadModifProfilDataUSer(){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             var dataa = JSON.parse(data);
-            console.log(dataa);
+            //console.log(dataa);
             if (data == "false") {
                 alert("erreur dans la connexion");
             } else {
@@ -339,11 +338,32 @@ function LoadCommonLibrary() {
         success: function (data) {// si la requête est un succès
             $("#contain").empty();
             $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+            LaodDataCommonLibrary();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
     return false; // on desactive le lien
+}
+
+function LaodDataCommonLibrary(){
+    var URL = "php/WSController.php?ws=Library&action=GetLibrary";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            $('#listLibrary').empty();
+            for (var t in dataa) {
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td></tr> ");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
 }
 
 function LoadPersonalLibrary() {

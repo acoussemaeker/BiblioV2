@@ -9,8 +9,10 @@ require 'IWebServiciable.php';
 include '/Database/db_connect.php';
 
 const PARAM_ACTION = 'action';
+const GET_Library = "GetLibrary";
+const SQL_GET_LIBRARY ="SELECT Id, Nom, Emplacement FROM audio";
 
-class WS_User implements IWebServiciable {
+class WS_Library implements IWebServiciable {
 
     public function doGet() {
         return $this->DoPost();
@@ -23,10 +25,18 @@ class WS_User implements IWebServiciable {
 
         switch ($_REQUEST[PARAM_ACTION])
         {
+
+            case GET_Library :
+                return $this->GetLibrary();
             default:
                 Helper::ThrowAccessDenied();
-                break;
         }
+    }
+
+    function GetLibrary(){
+        MySQL::Execute(SQL_GET_LIBRARY);
+        return MySQL::GetResult()->fetchAll();
+
     }
 
     public function doPut() {

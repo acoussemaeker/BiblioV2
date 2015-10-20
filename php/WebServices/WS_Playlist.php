@@ -10,7 +10,7 @@ include '/Database/db_connect.php';
 
 const PARAM_ACTION = 'action';
 
-class WS_User implements IWebServiciable {
+class WS_Playlist implements IWebServiciable {
 
     public function doGet() {
         return $this->DoPost();
