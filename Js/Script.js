@@ -329,6 +329,48 @@ function LoadGestionPlaylist(){
         success: function (url) {// si la requête est un succès
             $("#contain").empty(); // on vide le div
             $("#contain").append(url); // on met dans le div le résultat de la requête ajax
+            LoadDataPlaylist();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function LoadDataPlaylist(){
+    var URL = "php/WSController.php?ws=Playlist&action=GetPlaylist";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            //console.log(dataa);
+            if (data == "false") {
+                alert("erreur dans la connexion");
+            } else {
+                for (var t in dataa) {
+                    $('#TabPlaylist').append("<tr> <td>" + dataa[t].Nom + "</td><td><audio controls=\"controls\"></audio></td><td><div class=\"btn-group\" role=\"group\" ><button type=\"button\" class=\"btn btn-default\" onclick=\"LoadDetailPlaylist("+dataa[t].Id+")\">Afficher</button> <button type=\"button\" class=\"btn btn-danger\">Supprimer</button> </div> </td> </tr>");
+
+                }
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function LoadDetailPlaylist(){
+    var URL = "View/Users/ModifPlaylist.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            $("#contain").empty();
+            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+            Check();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }

@@ -34,8 +34,28 @@
       <file leaf-file-name="Script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Js/Script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.48243558" vertical-offset="7255" max-vertical-offset="9520">
-              <caret line="451" column="64" selection-start-line="451" selection-start-column="64" selection-end-line="451" selection-end-column="64" />
+            <state vertical-scroll-proportion="0.62177986" vertical-offset="5725" max-vertical-offset="10234">
+              <caret line="368" column="21" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Css/Style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="1071">
+              <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GestionPlaylist.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/View/Users/GestionPlaylist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="340">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -44,8 +64,8 @@
       <file leaf-file-name="ModifPlaylist.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/Users/ModifPlaylist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="629">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="629">
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -64,10 +84,11 @@
       <file leaf-file-name="WS_Playlist.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.576923" vertical-offset="102" max-vertical-offset="1003">
-              <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
+            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1326">
+              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
               <folding>
-                <marker date="1445373446544" expanded="true" signature="281:334" placeholder="INSERT INTO ..." />
+                <marker date="1445376618760" expanded="true" signature="316:369" placeholder="INSERT INTO ..." />
+                <marker date="1445376618760" expanded="true" signature="397:451" placeholder="SELECT Id, U..playlist..." />
               </folding>
             </state>
           </provider>
@@ -96,8 +117,8 @@
       <file leaf-file-name="WS_Library.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Library.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.961538" vertical-offset="796" max-vertical-offset="1751">
-              <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+            <state vertical-scroll-proportion="-7.9615383" vertical-offset="796" max-vertical-offset="1751">
+              <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="65" selection-end-column="9" />
               <folding>
                 <marker date="1445375593050" expanded="true" signature="406:444" placeholder="SELECT Id, N..audio..." />
                 <marker date="1445375593050" expanded="true" signature="478:603" placeholder="SELECT audio..audio..." />
@@ -160,16 +181,16 @@
         <option value="$PROJECT_DIR$/Index.php" />
         <option value="$PROJECT_DIR$/View/MenuGauche.php" />
         <option value="$PROJECT_DIR$/View/PersonalLibrary.php" />
-        <option value="$PROJECT_DIR$/View/Users/GestionPlaylist.php" />
         <option value="$PROJECT_DIR$/View/Users/CommonLibrary.php" />
         <option value="$PROJECT_DIR$/View/Users/PersonalLibrary.php" />
         <option value="$PROJECT_DIR$/View/Headers/LeftMenu.php" />
         <option value="$PROJECT_DIR$/View/Users/NewPlaylist.php" />
         <option value="$PROJECT_DIR$/error.php" />
-        <option value="$PROJECT_DIR$/php/WebServices/WS_Playlist.php" />
         <option value="$PROJECT_DIR$/php/WebServices/WS_User.php" />
         <option value="$PROJECT_DIR$/View/Users/ModifPlaylist.php" />
         <option value="$PROJECT_DIR$/php/WebServices/WS_Library.php" />
+        <option value="$PROJECT_DIR$/php/WebServices/WS_Playlist.php" />
+        <option value="$PROJECT_DIR$/View/Users/GestionPlaylist.php" />
         <option value="$PROJECT_DIR$/Js/Script.js" />
       </list>
     </option>
@@ -696,13 +717,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Css/Style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="340" max-vertical-offset="1054">
-          <caret line="56" column="1" selection-start-line="56" selection-start-column="1" selection-end-line="56" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/WebServices/IWebServiciable.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923" vertical-offset="0" max-vertical-offset="238">
@@ -770,14 +784,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/Users/GestionPlaylist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.26923" vertical-offset="0" max-vertical-offset="663">
-          <caret line="31" column="101" selection-start-line="31" selection-start-column="101" selection-end-line="31" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/Headers/UserHeader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.807693" vertical-offset="0" max-vertical-offset="357">
@@ -837,22 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/View/Users/ModifPlaylist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.115385" vertical-offset="0" max-vertical-offset="629">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/View/Users/PersonalLibrary.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.076923" vertical-offset="1714" max-vertical-offset="2890">
@@ -866,20 +856,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
+    <entry file="file://$PROJECT_DIR$/Css/Style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.576923" vertical-offset="102" max-vertical-offset="1003">
-          <caret line="39" column="12" selection-start-line="39" selection-start-column="12" selection-end-line="39" selection-end-column="12" />
-          <folding>
-            <marker date="1445373446544" expanded="true" signature="281:334" placeholder="INSERT INTO ..." />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="175" max-vertical-offset="1071">
+          <caret line="40" column="20" selection-start-line="40" selection-start-column="20" selection-end-line="40" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Library.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.961538" vertical-offset="796" max-vertical-offset="1751">
-          <caret line="85" column="20" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        <state vertical-scroll-proportion="-7.9615383" vertical-offset="796" max-vertical-offset="1751">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="65" selection-end-column="9" />
           <folding>
             <marker date="1445375593050" expanded="true" signature="406:444" placeholder="SELECT Id, N..audio..." />
             <marker date="1445375593050" expanded="true" signature="478:603" placeholder="SELECT audio..audio..." />
@@ -889,10 +877,45 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/View/Users/PersonalLibrary.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Users/ModifPlaylist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.307692" vertical-offset="0" max-vertical-offset="629">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/View/Users/GestionPlaylist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="340">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1326">
+          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <marker date="1445376618760" expanded="true" signature="316:369" placeholder="INSERT INTO ..." />
+            <marker date="1445376618760" expanded="true" signature="397:451" placeholder="SELECT Id, U..playlist..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Js/Script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48243558" vertical-offset="7255" max-vertical-offset="9520">
-          <caret line="451" column="64" selection-start-line="451" selection-start-column="64" selection-end-line="451" selection-end-column="64" />
+        <state vertical-scroll-proportion="0.62177986" vertical-offset="5725" max-vertical-offset="10234">
+          <caret line="368" column="21" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
           <folding />
         </state>
       </provider>
