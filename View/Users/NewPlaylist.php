@@ -1,6 +1,6 @@
 <div class="nouveau">
-    <h2>Nouvelle playlist</h2>
     <div class="milieuPage">
+        <h2>Nouvelle playlist</h2>
         <div class="form-group">
             <label for="contenu">Titre</label>
             <input type="text" placeholder="Titre de la playlist" id="Titre" class="form-control"/>
