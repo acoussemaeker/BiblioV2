@@ -15,6 +15,7 @@ const PARAM_RePassword ='RePassword';
 const PARAM_Mail ='Mail';
 const PARAM_ReMail ='ReMail';
 const GET_Connect = 'Connect';
+const Check = 'Check';
 const Disconnect = 'Disconnect';
 const GET_User = 'GetUser';
 const MODIF_User = 'ModifUser';
@@ -40,6 +41,8 @@ class WS_User implements IWebServiciable {
                 return $this->Connect();
             case GET_User:
                 return $this->GetUser();
+            case Check:
+                return $this->Check();
             case Disconnect:
                 return $this->Disconnect();
             case MODIF_User:
@@ -144,6 +147,15 @@ class WS_User implements IWebServiciable {
         session_start();
         $_SESSION['connexion']= null;
         return true;
+    }
+
+    private function Check(){
+        session_start();
+        if(!isset($_SESSION['connexion'])){
+            return false;
+        }else{
+            return true;
+        }
     }
 
     public function doPut() {

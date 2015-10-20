@@ -43,6 +43,30 @@ function Disconnect() {
     return false;
 }
 
+function Check() {
+    var URL = "php/WSController.php?ws=User&action=Check";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "false")
+            {
+                LaodDataCommonLibraryDisconnect();
+                alert("false");
+            }else{
+                LaodDataCommonLibraryConnect();
+                alert("true");
+
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
+}
+
 function Verif(){
     if($('#Login').val() == ""){
         alert("veuillez remplir le Login");
@@ -338,7 +362,7 @@ function LoadCommonLibrary() {
         success: function (data) {// si la requête est un succès
             $("#contain").empty();
             $("#contain").append(data); // on met dans le div le résultat de la requête ajax
-            LaodDataCommonLibrary();
+            Check();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -346,7 +370,7 @@ function LoadCommonLibrary() {
     return false; // on desactive le lien
 }
 
-function LaodDataCommonLibrary(){
+function LaodDataCommonLibraryDisconnect(){
     var URL = "php/WSController.php?ws=Library&action=GetLibrary";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -358,6 +382,26 @@ function LaodDataCommonLibrary(){
             $('#listLibrary').empty();
             for (var t in dataa) {
                 $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td></tr> ");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false;
+}
+
+function LaodDataCommonLibraryConnect(){
+    var URL = "php/WSController.php?ws=Library&action=GetLibrary";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            $('#listLibrary').empty();
+            for (var t in dataa) {
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td></tr> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\"/> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete

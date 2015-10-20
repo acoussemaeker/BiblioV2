@@ -31,11 +31,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Js/Script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6826698" vertical-offset="5503" max-vertical-offset="6902">
-              <caret line="358" column="34" selection-start-line="358" selection-start-column="34" selection-end-line="358" selection-end-column="34" />
+            <state vertical-scroll-proportion="-24.034483" vertical-offset="306" max-vertical-offset="7650">
+              <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -44,8 +44,8 @@
       <file leaf-file-name="CommonLibrary.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/Users/CommonLibrary.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="476">
-              <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+            <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="391">
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -83,13 +83,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WS_User.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WS_User.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-43.26923" vertical-offset="235" max-vertical-offset="2686">
-              <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
+            <state vertical-scroll-proportion="0.570115" vertical-offset="2003" max-vertical-offset="2890">
+              <caret line="152" column="24" selection-start-line="152" selection-start-column="24" selection-end-line="152" selection-end-column="24" />
               <folding>
                 <element signature="e#6#89#0#PHP" expanded="false" />
+                <marker date="1445358559586" expanded="true" signature="548:617" placeholder="SELECT Id, P..user..." />
+                <marker date="1445358559586" expanded="true" signature="646:712" placeholder="UPDATE user ..." />
+                <marker date="1445358559586" expanded="true" signature="740:818" placeholder="INSERT INTO ..." />
               </folding>
             </state>
           </provider>
@@ -129,7 +132,6 @@
         <option value="$PROJECT_DIR$/error.php" />
         <option value="$PROJECT_DIR$/View/NewUser.php" />
         <option value="$PROJECT_DIR$/View/ConnexionHeader.php" />
-        <option value="$PROJECT_DIR$/php/WebServices/WS_User.php" />
         <option value="$PROJECT_DIR$/View/CommonLibrary.php" />
         <option value="$PROJECT_DIR$/Index.php" />
         <option value="$PROJECT_DIR$/View/MenuGauche.php" />
@@ -140,6 +142,7 @@
         <option value="$PROJECT_DIR$/php/WebServices/WS_Library.php" />
         <option value="$PROJECT_DIR$/View/Users/CommonLibrary.php" />
         <option value="$PROJECT_DIR$/Js/Script.js" />
+        <option value="$PROJECT_DIR$/php/WebServices/WS_User.php" />
       </list>
     </option>
   </component>
@@ -468,6 +471,9 @@
           <caret line="38" column="32" selection-start-line="38" selection-start-column="32" selection-end-line="38" selection-end-column="32" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="false" />
+            <marker date="1445358559586" expanded="true" signature="548:617" placeholder="SELECT Id, P..user..." />
+            <marker date="1445358559586" expanded="true" signature="646:712" placeholder="UPDATE user ..." />
+            <marker date="1445358559586" expanded="true" signature="740:818" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -569,6 +575,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="false" />
+            <marker date="1445358559586" expanded="true" signature="548:617" placeholder="SELECT Id, P..user..." />
+            <marker date="1445358559586" expanded="true" signature="646:712" placeholder="UPDATE user ..." />
+            <marker date="1445358559586" expanded="true" signature="740:818" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -617,6 +626,9 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#6#89#0#PHP" expanded="false" />
+            <marker date="1445358559586" expanded="true" signature="548:617" placeholder="SELECT Id, P..user..." />
+            <marker date="1445358559586" expanded="true" signature="646:712" placeholder="UPDATE user ..." />
+            <marker date="1445358559586" expanded="true" signature="740:818" placeholder="INSERT INTO ..." />
           </folding>
         </state>
       </provider>
@@ -779,16 +791,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-43.26923" vertical-offset="235" max-vertical-offset="2686">
-          <caret line="85" column="25" selection-start-line="85" selection-start-column="25" selection-end-line="85" selection-end-column="25" />
-          <folding>
-            <element signature="e#6#89#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/Users/NewUser.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="561">
@@ -817,17 +819,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/View/Users/CommonLibrary.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="476">
-          <caret line="18" column="49" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="49" />
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="391">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Js/Script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6826698" vertical-offset="5503" max-vertical-offset="6902">
-          <caret line="358" column="34" selection-start-line="358" selection-start-column="34" selection-end-line="358" selection-end-column="34" />
+        <state vertical-scroll-proportion="-24.034483" vertical-offset="306" max-vertical-offset="7650">
+          <caret line="59" column="27" selection-start-line="59" selection-start-column="27" selection-end-line="59" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.570115" vertical-offset="2003" max-vertical-offset="2890">
+          <caret line="152" column="24" selection-start-line="152" selection-start-column="24" selection-end-line="152" selection-end-column="24" />
+          <folding>
+            <element signature="e#6#89#0#PHP" expanded="false" />
+            <marker date="1445358559586" expanded="true" signature="548:617" placeholder="SELECT Id, P..user..." />
+            <marker date="1445358559586" expanded="true" signature="646:712" placeholder="UPDATE user ..." />
+            <marker date="1445358559586" expanded="true" signature="740:818" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>
