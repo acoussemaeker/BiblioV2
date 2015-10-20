@@ -14,6 +14,7 @@ function Start() {
             $("#LeftMenu").empty();
             $("#header").append(data); // on met dans le div le résultat de la requête ajax
             LoadCommonLibrary();
+            LoadLeftMenuView();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -125,7 +126,7 @@ function LoadDataHeader() {
 }
 
 function LoadLeftMenuView(){
-    var URL = "View/MenuGauche.php"; // on recuperer l' adresse du lien
+    var URL = "View/Headers/MenuGauche.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -134,7 +135,7 @@ function LoadLeftMenuView(){
         success: function (url) {// si la requête est un succès
             $("#LeftMenu").empty(); // on vide le div
             $("#LeftMenu").append(url); // on met dans le div le résultat de la requête ajax
-            LoadProfilView();
+            LoadCommonLibrary();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -312,7 +313,7 @@ function AddUser(){
 }
 
 function LoadGestionPlaylist(){
-    var URL = "View/GestionPlaylist.php"; // on recuperer l' adresse du lien
+    var URL = "View/Users/GestionPlaylist.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -329,7 +330,41 @@ function LoadGestionPlaylist(){
 }
 
 function LoadCommonLibrary() {
-    var URL = "View/CommonLibrary.php"; // on recuperer l' adresse du lien
+    var URL = "View/Users/CommonLibrary.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            $("#contain").empty();
+            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
+}
+
+function LoadPersonalLibrary() {
+    var URL = "View/Users/PersonalLibrary.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            $("#contain").empty();
+            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
+}
+
+function LoadNewPlaylist() {
+    var URL = "View/Users/NewPlaylist.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache

@@ -8,7 +8,7 @@
         <script src="Js/Script.js"></script>
         <title>index</title>
     </head>
-    <body onload="Start()">
+    <body onload="Disconnect()">
         <div class="header navbar navbar-default" id="header" >header</div>
         <div class="menu" id="LeftMenu">menu</div>
         <div class="contain" id="contain">contenu</div>
