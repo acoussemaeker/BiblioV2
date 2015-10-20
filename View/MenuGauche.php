@@ -11,7 +11,7 @@
             echo '
                 <br/>
             <ul class="nav nav-divider nav-stacked">
-                <li class="btn-info"><a href="#" onclick="">Bibliothèque commune</a></li>
+                <li class="btn-info"><a href="#" onclick="LoadCommonLibrary()">Bibliothèque commune</a></li>
                 <li class="btn-info"><a href="#" onclick="">Bibliothèque Personel</a></li>
                 <li class="btn-info"><a href="#" onclick="LoadGestionPlaylist()">Gestion des playlist</a></li>
                 <li class="btn-info"><a href="#" onclick="LoadProfilView()">Gestion du profile</a></li>

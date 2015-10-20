@@ -2,7 +2,7 @@
  * Created by anthony on 13/10/2015.
  */
 function Start() {
-    var URL = "View/ConnexionHeader.php"; // on recuperer l' adresse du lien
+    var URL = "View/Headers/ConnexionHeader.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -13,6 +13,7 @@ function Start() {
             $("#contain").empty();
             $("#LeftMenu").empty();
             $("#header").append(data); // on met dans le div le résultat de la requête ajax
+            LoadCommonLibrary();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -82,7 +83,7 @@ function UserLog() {
 }
 
 function HeaderUserLog() {
-    var URL = "View/UserHeader.php"; // on recuperer l' adresse du lien
+    var URL = "View/Headers/UserHeader.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -142,7 +143,7 @@ function LoadLeftMenuView(){
 }
 
 function LoadProfilView(){
-    var URL = "View/ProfilUser.php"; // on recuperer l' adresse du lien
+    var URL = "View/Users/ProfilUser.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -187,7 +188,7 @@ function LoadDataProfil(){
 }
 
 function LoadModifProfilUser(){
-    var URL = "View/ModifProfilUser.php"; // on recuperer l' adresse du lien
+    var URL = "View/Users/ModifProfilUser.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -264,7 +265,7 @@ function ModifProfilUserData(){
 }
 
 function LoadCreateProfilView(){
-    var URL = "View/NewUser.php"; // on recuperer l' adresse du lien
+    var URL = "View/Users/NewUser.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
         cache: false, // pas de mise en cache
@@ -320,6 +321,23 @@ function LoadGestionPlaylist(){
         success: function (url) {// si la requête est un succès
             $("#contain").empty(); // on vide le div
             $("#contain").append(url); // on met dans le div le résultat de la requête ajax
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+    return false; // on desactive le lien
+}
+
+function LoadCommonLibrary() {
+    var URL = "View/CommonLibrary.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            $("#contain").empty();
+            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
