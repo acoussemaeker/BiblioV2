@@ -18,7 +18,6 @@ function Start() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function Disconnect() {
@@ -40,7 +39,6 @@ function Disconnect() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function Check() {
@@ -62,7 +60,6 @@ function Check() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function Verif(){
@@ -101,7 +98,6 @@ function UserLog() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function HeaderUserLog() {
@@ -119,7 +115,6 @@ function HeaderUserLog() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function LoadDataHeader() {
@@ -143,7 +138,6 @@ function LoadDataHeader() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function LoadLeftMenuView(){
@@ -161,7 +155,6 @@ function LoadLeftMenuView(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function LoadProfilView(){
@@ -179,7 +172,6 @@ function LoadProfilView(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function LoadDataProfil(){
@@ -206,7 +198,6 @@ function LoadDataProfil(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function LoadModifProfilUser(){
@@ -224,7 +215,6 @@ function LoadModifProfilUser(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function LoadModifProfilDataUSer(){
@@ -255,7 +245,6 @@ function LoadModifProfilDataUSer(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function ModifProfilUserData(){
@@ -277,13 +266,12 @@ function ModifProfilUserData(){
             if (data == "false") {
                 alert("erreur dans la connexion");
             } else {
-                alert("Modification Validée");
+                alert(data);
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function LoadCreateProfilView(){
@@ -301,7 +289,6 @@ function LoadCreateProfilView(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function AddUser(){
@@ -330,7 +317,6 @@ function AddUser(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function LoadGestionPlaylist(){
@@ -347,7 +333,6 @@ function LoadGestionPlaylist(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function LoadCommonLibrary() {
@@ -365,7 +350,6 @@ function LoadCommonLibrary() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
 
 function LaodDataCommonLibraryDisconnect(){
@@ -385,7 +369,6 @@ function LaodDataCommonLibraryDisconnect(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function LaodDataCommonLibraryConnect(){
@@ -405,7 +388,6 @@ function LaodDataCommonLibraryConnect(){
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false;
 }
 
 function LoadPersonalLibrary() {
@@ -418,11 +400,30 @@ function LoadPersonalLibrary() {
         success: function (data) {// si la requête est un succès
             $("#contain").empty();
             $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+            LaodDataPersonalLibrary();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
+}
+
+function LaodDataPersonalLibrary(){
+    var URL = "php/WSController.php?ws=Library&action=GetLibraryClient";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            $('#listLibrary').empty();
+            for (var t in dataa) {
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td></tr> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\"/><input type=\"button\" class=\"btn btn-success\" value=\"Ajouter à une playlistl\"/> </div> </td> </tr>");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
 }
 
 function LoadNewPlaylist() {
@@ -439,5 +440,4 @@ function LoadNewPlaylist() {
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
     });
-    return false; // on desactive le lien
 }
