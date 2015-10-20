@@ -101,10 +101,8 @@ class WS_User implements IWebServiciable {
         {
             Helper::ThrowRequestError();
         }
-
         if($_REQUEST[PARAM_Password]==$_REQUEST[PARAM_RePassword] && $_REQUEST[PARAM_Mail]==$_REQUEST[PARAM_ReMail] )
         {
-            alert('toto');
             MySQL::Execute(
             sprintf(SQL_UPGRADE_User,
                 $_REQUEST[PARAM_Login],

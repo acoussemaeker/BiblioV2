@@ -254,7 +254,7 @@ function ModifProfilUserData(){
             if (data == "false") {
                 alert("erreur dans la connexion");
             } else {
-                alert(data);
+                alert("Modification Validée");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
