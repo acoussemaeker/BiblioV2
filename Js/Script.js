@@ -347,7 +347,7 @@ function LoadDataPlaylist(){
             var dataa = JSON.parse(data);
             //console.log(dataa);
             if (data == "false") {
-                alert("erreur dans la connexion");
+                alert("Aucune Playlist Trouvé");
             } else {
                 for (var t in dataa) {
                     $('#TabPlaylist').append("<tr> <td>" + dataa[t].Nom + "</td><td><audio controls=\"controls\"></audio></td><td><div class=\"btn-group\" role=\"group\" ><button type=\"button\" class=\"btn btn-default\" onclick=\"LoadDetailPlaylist("+dataa[t].Id+")\">Afficher</button> <button type=\"button\" class=\"btn btn-danger\">Supprimer</button> </div> </td> </tr>");
@@ -370,7 +370,6 @@ function LoadDetailPlaylist(){
         success: function (data) {// si la requête est un succès
             $("#contain").empty();
             $("#contain").append(data); // on met dans le div le résultat de la requête ajax
-            Check();
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }

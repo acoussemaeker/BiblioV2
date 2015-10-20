@@ -34,8 +34,8 @@
       <file leaf-file-name="Script.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Js/Script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62177986" vertical-offset="5725" max-vertical-offset="10234">
-              <caret line="368" column="21" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.42271662" vertical-offset="5572" max-vertical-offset="10217">
+              <caret line="349" column="45" selection-start-line="349" selection-start-column="45" selection-end-line="349" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -84,8 +84,8 @@
       <file leaf-file-name="WS_Playlist.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1326">
-              <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+            <state vertical-scroll-proportion="-22.346153" vertical-offset="456" max-vertical-offset="1326">
+              <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
               <folding>
                 <marker date="1445376618760" expanded="true" signature="316:369" placeholder="INSERT INTO ..." />
                 <marker date="1445376618760" expanded="true" signature="397:451" placeholder="SELECT Id, U..playlist..." />
@@ -903,8 +903,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="1326">
-          <caret line="19" column="29" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state vertical-scroll-proportion="-22.346153" vertical-offset="456" max-vertical-offset="1326">
+          <caret line="61" column="27" selection-start-line="61" selection-start-column="27" selection-end-line="61" selection-end-column="27" />
           <folding>
             <marker date="1445376618760" expanded="true" signature="316:369" placeholder="INSERT INTO ..." />
             <marker date="1445376618760" expanded="true" signature="397:451" placeholder="SELECT Id, U..playlist..." />
@@ -914,8 +914,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Js/Script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62177986" vertical-offset="5725" max-vertical-offset="10234">
-          <caret line="368" column="21" selection-start-line="368" selection-start-column="21" selection-end-line="368" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.42271662" vertical-offset="5572" max-vertical-offset="10217">
+          <caret line="349" column="45" selection-start-line="349" selection-start-column="45" selection-end-line="349" selection-end-column="45" />
           <folding />
         </state>
       </provider>
