@@ -427,7 +427,7 @@ function LaodDataCommonLibraryDisconnect(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td></tr> ");
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td></tr> ");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -446,7 +446,7 @@ function LaodDataCommonLibraryConnect(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><audio controls='controls'></audio></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\" onclick=\"AddAudioUser("+dataa[t].Id+")\"/> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\" onclick=\"AddAudioUser("+dataa[t].Id+")\"/> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
