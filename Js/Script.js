@@ -359,7 +359,7 @@ function LoadDataPlaylist(){
     });
 }
 
-function LoadDetailPlaylist(){
+function LoadDetailPlaylist(Id){
     var URL = "View/Users/ModifPlaylist.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -625,4 +625,47 @@ function startListener(data) {
     var audio = document.getElementById("audio");
     audio.play();
 };
-              
+
+function LoadAdminAudio(){
+    var URL = "php/WSController.php?ws=Library&action=GetLibrary";
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            $('#listLibrary').empty();
+            $('#ListLibrary').empty();
+            for (var t in dataa) {
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"Suprimmer de la Bibliotheque Commune\" onclick=\"DeleteAudio("+dataa[t].Id+")\"/> </td> </tr>");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function DeleteAudio(data){
+    var URL = "php/WSController.php?ws=Library&action=DeleteAudio";
+    var params = {
+        'AudioID' : data
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data: params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "true"){
+                alert ("Audio Supprimer de la Bibliotheque")
+            }
+            else{
+                alert("Erreur dans l'enregistrement")
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
