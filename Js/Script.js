@@ -554,7 +554,8 @@ function LaodDataPersonalLibrary(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener("+dataa[t].Emplacement+")\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser("+dataa[t].Id+")\"/> </div> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser("+dataa[t].Id+")\"/> </div> </td> </tr>");
+                alert(dataa[t].Emplacement);
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
