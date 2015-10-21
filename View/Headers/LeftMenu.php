@@ -1,10 +1,10 @@
 <div class="menu-gauche">
-    
+
     <?php
     session_start();
-    if($_SESSION['connexion'] == null){
-
-    }else{
+    if ($_SESSION['connexion'] == null) {
+        
+    } else {
         switch ($_SESSION['connexion']->Grade) {
             case 0:
                 echo '
@@ -32,4 +32,9 @@
         }
     }
     ?>
+    <div id="listener">
+        <audio controls="controls" preload="none" class="listener">
+            <source src="audio/bouh.mp3" type="audio/mp3" />
+        </audio>
+    </div>
 </div>
