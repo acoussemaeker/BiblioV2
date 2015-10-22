@@ -28,10 +28,10 @@ function Disconnect() {
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "false")
+            if (data == "false")
             {
                 alert("erreur dans la connexion");
-            }else{
+            } else {
                 Start(); // on met dans le div le résultat de la requête ajax
 
             }
@@ -49,10 +49,10 @@ function Check() {
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "false")
+            if (data == "false")
             {
                 LaodDataCommonLibraryDisconnect();
-            }else{
+            } else {
                 LaodDataCommonLibraryConnect();
 
             }
@@ -62,13 +62,13 @@ function Check() {
     });
 }
 
-function Verif(){
-    if($('#Login').val() == ""){
+function Verif() {
+    if ($('#Login').val() == "") {
         alert("veuillez remplir le Login");
-    }else{
-        if($('#Password').val()==""){
+    } else {
+        if ($('#Password').val() == "") {
             alert("veuillez remplir le Password");
-        }else{
+        } else {
             UserLog();
         }
     }
@@ -77,8 +77,8 @@ function Verif(){
 function UserLog() {
     var URL = "php/WSController.php?ws=User&action=Connect";
     var params = {
-        'Login' : $('#LoginHeader').val(),
-        'Password' : $('#PasswordHeader').val()
+        'Login': $('#LoginHeader').val(),
+        'Password': $('#PasswordHeader').val()
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -87,10 +87,10 @@ function UserLog() {
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "false")
+            if (data == "false")
             {
                 alert("erreur dans la connexion");
-            }else{
+            } else {
                 HeaderUserLog(); // on met dans le div le résultat de la requête ajax
 
             }
@@ -131,7 +131,7 @@ function LoadDataHeader() {
                 alert("erreur dans la connexion");
             } else {
                 $("#PseudoHeader").empty();
-                $("#PseudoHeader").append("Vous êtes connectez en temps que : " +dataa.Pseudo);
+                $("#PseudoHeader").append("Vous êtes connectez en temps que : " + dataa.Pseudo);
                 LoadLeftMenuView();
             }
         },
@@ -140,7 +140,7 @@ function LoadDataHeader() {
     });
 }
 
-function LoadLeftMenuView(){
+function LoadLeftMenuView() {
     var URL = "View/Headers/LeftMenu.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -157,7 +157,7 @@ function LoadLeftMenuView(){
     });
 }
 
-function LoadProfilView(){
+function LoadProfilView() {
     var URL = "View/Users/ProfilUser.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -174,7 +174,7 @@ function LoadProfilView(){
     });
 }
 
-function LoadDataProfil(){
+function LoadDataProfil() {
     var URL = "php/WSController.php?ws=User&action=GetUser";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -200,7 +200,7 @@ function LoadDataProfil(){
     });
 }
 
-function LoadModifProfilUser(){
+function LoadModifProfilUser() {
     var URL = "View/Users/ModifProfilUser.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -217,7 +217,7 @@ function LoadModifProfilUser(){
     });
 }
 
-function LoadModifProfilDataUSer(){
+function LoadModifProfilDataUSer() {
     var URL = "php/WSController.php?ws=User&action=GetUser";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -247,18 +247,18 @@ function LoadModifProfilDataUSer(){
     });
 }
 
-function ModifProfilUserData(){
+function ModifProfilUserData() {
     var URL = "php/WSController.php?ws=User&action=ModifUser";
     var params = {
-        'Login' : $('#Login').val(),
-        'Password' : $('#Password').val(),
-        'RePassword' : $('#RePassword').val(),
-        'Mail' : $('#Mail').val(),
-        'ReMail' : $('#ReMail').val()
+        'Login': $('#Login').val(),
+        'Password': $('#Password').val(),
+        'RePassword': $('#RePassword').val(),
+        'Mail': $('#Mail').val(),
+        'ReMail': $('#ReMail').val()
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
-        data : params,
+        data: params,
         cache: false, // pas de mise en cache
         dataType: 'text',
         type: 'POST',
@@ -275,7 +275,7 @@ function ModifProfilUserData(){
     });
 }
 
-function LoadCreateProfilView(){
+function LoadCreateProfilView() {
     var URL = "View/Users/NewUser.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -292,14 +292,14 @@ function LoadCreateProfilView(){
     });
 }
 
-function AddUser(){
+function AddUser() {
     var URL = "php/WSController.php?ws=User&action=CreateUser";
     var params = {
-        'Login' : $('#Login').val(),
-        'Password' : $('#Password').val(),
-        'RePassword' : $('#RePassword').val(),
-        'Mail' : $('#Mail').val(),
-        'ReMail' : $('#ReMail').val()
+        'Login': $('#Login').val(),
+        'Password': $('#Password').val(),
+        'RePassword': $('#RePassword').val(),
+        'Mail': $('#Mail').val(),
+        'ReMail': $('#ReMail').val()
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -308,10 +308,10 @@ function AddUser(){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("Utilisateur enregister")
+            if (data == "true") {
+                alert("Utilisateur enregister")
             }
-            else{
+            else {
                 alert("Erreur dans l'enregistrement")
             }
         },
@@ -320,7 +320,7 @@ function AddUser(){
     });
 }
 
-function LoadGestionPlaylist(){
+function LoadGestionPlaylist() {
     var URL = "View/Users/GestionPlaylist.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -337,7 +337,7 @@ function LoadGestionPlaylist(){
     });
 }
 
-function LoadDataPlaylist(){
+function LoadDataPlaylist() {
     var URL = "php/WSController.php?ws=Playlist&action=GetPlaylist";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -351,7 +351,7 @@ function LoadDataPlaylist(){
                 alert("Aucune Playlist Trouvé");
             } else {
                 for (var t in dataa) {
-                    $('#TabPlaylist').append("<tr> <td>" + dataa[t].Nom + "</td><td><audio controls=\"controls\"></audio></td><td><div class=\"btn-group\" role=\"group\" ><button type=\"button\" class=\"btn btn-default\" onclick=\"LoadDetailPlaylist()\">Afficher</button> <button type=\"button\" class=\"btn btn-danger\" onclick=\"DeletePlaylist("+dataa[t].Id+")\">Supprimer</button> </div> </td> </tr>");
+                    $('#TabPlaylist').append("<tr> <td>" + dataa[t].Nom + "</td><td><audio controls=\"controls\"></audio></td><td><div class=\"btn-group\" role=\"group\" ><button type=\"button\" class=\"btn btn-default\" onclick=\"LoadDetailPlaylist()\">Afficher</button> <button type=\"button\" class=\"btn btn-danger\" onclick=\"DeletePlaylist(" + dataa[t].Id + ")\">Supprimer</button> </div> </td> </tr>");
                 }
             }
         },
@@ -360,7 +360,7 @@ function LoadDataPlaylist(){
     });
 }
 
-function LoadDetailPlaylist(Id){
+function LoadDetailPlaylist(Id) {
     var URL = "View/Users/ModifPlaylist.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -376,10 +376,10 @@ function LoadDetailPlaylist(Id){
     });
 }
 
-function DeletePlaylist(data){
+function DeletePlaylist(data) {
     var URL = "php/WSController.php?ws=Playlist&action=DeletePlaylist";
     var params = {
-        'PlaylistID' : data
+        'PlaylistID': data
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -388,11 +388,11 @@ function DeletePlaylist(data){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("Playlist Supprimer de votre Bibliotheque")
+            if (data == "true") {
+                alert("Playlist Supprimer de votre Bibliotheque")
                 LoadGestionPlaylist();
             }
-            else{
+            else {
                 alert("Erreur dans l'enregistrement")
             }
         },
@@ -418,7 +418,7 @@ function LoadCommonLibrary() {
     });
 }
 
-function LaodDataCommonLibraryDisconnect(){
+function LaodDataCommonLibraryDisconnect() {
     var URL = "php/WSController.php?ws=Library&action=GetLibrary";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -429,7 +429,7 @@ function LaodDataCommonLibraryDisconnect(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td></tr> ");
+                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td></tr> ");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -437,7 +437,7 @@ function LaodDataCommonLibraryDisconnect(){
     });
 }
 
-function LaodDataCommonLibraryConnect(){
+function LaodDataCommonLibraryConnect() {
     var URL = "php/WSController.php?ws=Library&action=GetLibrary";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -448,7 +448,7 @@ function LaodDataCommonLibraryConnect(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\" onclick=\"AddAudioUser("+dataa[t].Id+")\"/> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\" onclick=\"AddAudioUser(" + dataa[t].Id + ")\"/> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -456,10 +456,10 @@ function LaodDataCommonLibraryConnect(){
     });
 }
 
-function AddAudioUser(data){
+function AddAudioUser(data) {
     var URL = "php/WSController.php?ws=Library&action=AddAudioUser";
     var params = {
-        'AudioID' : data
+        'AudioID': data
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -468,10 +468,10 @@ function AddAudioUser(data){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("Audio ajouter");
+            if (data == "true") {
+                alert("Audio ajouter");
             }
-            else{
+            else {
                 alert("Erreur dans l'enregistrement");
             }
         },
@@ -480,10 +480,10 @@ function AddAudioUser(data){
     });
 }
 
-function AddAudioUser(data){
+function AddAudioUser(data) {
     var URL = "php/WSController.php?ws=Library&action=AddAudioUser";
     var params = {
-        'AudioID' : data
+        'AudioID': data
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -492,10 +492,10 @@ function AddAudioUser(data){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("Audio ajouter");
+            if (data == "true") {
+                alert("Audio ajouter");
             }
-            else{
+            else {
                 alert("Erreur dans l'enregistrement");
             }
         },
@@ -504,10 +504,10 @@ function AddAudioUser(data){
     });
 }
 
-function DeleteAudioUser(data){
+function DeleteAudioUser(data) {
     var URL = "php/WSController.php?ws=Library&action=DeleteAudioUser";
     var params = {
-        'AudioID' : data
+        'AudioID': data
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -516,11 +516,11 @@ function DeleteAudioUser(data){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("Audio Supprimer de votre Bibliotheque");
+            if (data == "true") {
+                alert("Audio Supprimer de votre Bibliotheque");
                 LoadPersonalLibrary();
             }
-            else{
+            else {
                 alert("Erreur dans l'enregistrement");
             }
         },
@@ -546,7 +546,7 @@ function LoadPersonalLibrary() {
     });
 }
 
-function LaodDataPersonalLibrary(){
+function LaodDataPersonalLibrary() {
     var URL = "php/WSController.php?ws=Library&action=GetLibraryClient";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -557,7 +557,7 @@ function LaodDataPersonalLibrary(){
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser("+dataa[t].Id+")\"/> </div> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser(" + dataa[t].Id + ")\"/> </div> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -581,10 +581,10 @@ function LoadNewPlaylist() {
     });
 }
 
-function CreateNewPlaylist(){
+function CreateNewPlaylist() {
     var URL = "php/WSController.php?ws=Playlist&action=AddPlaylist";
     var params = {
-        'Titre' : $('#Titre').val()
+        'Titre': $('#Titre').val()
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -593,11 +593,11 @@ function CreateNewPlaylist(){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("Playlist Créée");
+            if (data == "true") {
+                alert("Playlist Créée");
                 LoadGestionPlaylist();
             }
-            else{
+            else {
                 alert("Erreur dans l'enregistrement");
             }
         },
@@ -606,7 +606,7 @@ function CreateNewPlaylist(){
     });
 }
 
-function LoadDoAskView(){
+function LoadDoAskView() {
     var URL = "View/Users/DoAsk.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -621,16 +621,33 @@ function LoadDoAskView(){
         }
     });
 }
-
+var Counter;
 function startListener(data) {
-    var newaudio = "<audio id=\"audio\" class=\"listener\" controls=\"controls\" buffered preload=\"none\"> <source src=\"audio/"+data+"\" type=\"audio/mp3\" />Votre navigateur n'est pas compatible </audio>";
+    var newaudio = "<audio id=\"audio\" class=\"listener\" controls=\"controls\" buffered preload=\"none\"> <source src=\"audio/" + data + "\" type=\"audio/mp3\" />Votre navigateur n'est pas compatible </audio>";
     $("#listener").empty();
-    $("#listener").append(newaudio);         
+    $("#listener").append(newaudio);
     var audio = document.getElementById("audio");
     audio.play();
-};
+    Counter = setInterval(CountTime, 10000);
+}
+//test tiens antho modifie
 
-function LoadAdminAudio(){
+function StopTime(audio) {
+    clearInterval(Counter);
+}
+
+
+function CountTime() {
+    var audio = document.getElementById("audio");
+    if (audio.ended) {
+        StopTime(audio);
+    }
+//    var time = "<label class='affichage'>" + audio.currentTime + "</label></br>";
+//    $("#Container").append(time);
+}
+
+
+function LoadAdminAudio() {
     var URL = "php/WSController.php?ws=Library&action=GetLibrary";
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -641,7 +658,7 @@ function LoadAdminAudio(){
             var dataa = JSON.parse(data);
             $('#ListLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"Suprimmer de la Bibliotheque Commune\" onclick=\"DeleteAudio("+dataa[t].Id+")\"/> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"Suprimmer de la Bibliotheque Commune\" onclick=\"DeleteAudio(" + dataa[t].Id + ")\"/> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -649,10 +666,10 @@ function LoadAdminAudio(){
     });
 }
 
-function DeleteAudio(data){
+function DeleteAudio(data) {
     var URL = "php/WSController.php?ws=Library&action=DeleteAudio";
     var params = {
-        'AudioID' : data
+        'AudioID': data
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -661,10 +678,10 @@ function DeleteAudio(data){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("Audio Supprimer de la Bibliotheque");
+            if (data == "true") {
+                alert("Audio Supprimer de la Bibliotheque");
             }
-            else{
+            else {
                 alert("Erreur dans l'enregistrement");
             }
         },
@@ -673,7 +690,7 @@ function DeleteAudio(data){
     });
 }
 
-function LoadAdminUser(){
+function LoadAdminUser() {
     var URL = "View/Admin/GestionUser.php"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -690,7 +707,7 @@ function LoadAdminUser(){
     });
 }
 
-function LoadDataAdminUser(){
+function LoadDataAdminUser() {
     var URL = "php/WSController.php?ws=User&action=GetAll"; // on recuperer l' adresse du lien
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -701,7 +718,7 @@ function LoadDataAdminUser(){
             var dataa = JSON.parse(data);
             $('#ListUsers').empty();
             for (var t in dataa) {
-                $('#ListUsers').append("<tr><td>"+dataa[t].Pseudo+"</td><td>"+dataa[t].Mail+"</td><td>"+dataa[t].Grade+"</td><td><input type=\"button\" class=\"btn btn-danger\" value=\"degage salle truit\" onclick=\"DeleteUser("+dataa[t].Id+")\"/></td></tr>");
+                $('#ListUsers').append("<tr><td>" + dataa[t].Pseudo + "</td><td>" + dataa[t].Mail + "</td><td>" + dataa[t].Grade + "</td><td><input type=\"button\" class=\"btn btn-danger\" value=\"degage salle truit\" onclick=\"DeleteUser(" + dataa[t].Id + ")\"/></td></tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -709,10 +726,10 @@ function LoadDataAdminUser(){
     });
 }
 
-function DeleteUser(data){
+function DeleteUser(data) {
     var URL = "php/WSController.php?ws=user&action=DeleteUser";
     var params = {
-        'AudioID' : data
+        'AudioID': data
     };
     $.ajax({// ajax
         url: URL, // url de la page à charger
@@ -721,10 +738,11 @@ function DeleteUser(data){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            if(data == "true"){
-                alert ("User Supprimer");
+            if (data == "true") {
+                alert("User Supprimer");
+                LoadAdminUser();
             }
-            else{
+            else {
                 alert("Erreur dans la suppression");
             }
         },
@@ -732,3 +750,5 @@ function DeleteUser(data){
         }
     });
 }
+
+
