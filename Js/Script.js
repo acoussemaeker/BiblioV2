@@ -446,7 +446,7 @@ function LaodDataCommonLibraryConnect() {
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\" onclick=\"AddAudioUser(" + dataa[t].Id + ")\"/> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "', '" + dataa[t].Nom + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"ajouter a la Biblihotheque Personnel\" onclick=\"AddAudioUser(" + dataa[t].Id + ")\"/> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -557,7 +557,7 @@ function LaodDataPersonalLibrary() {
             
             for (var t in dataa) {
 //                alert(dataa[t].UserAudio);
-                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "', '" + dataa[t].UserAudio + "', '" + dataa[t].Nom + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser(" + dataa[t].UserAudio + ")\"/> </div> </td> </tr>");
+                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "', '" + dataa[t].Nom + "', '" + dataa[t].UserAudio + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser(" + dataa[t].UserAudio + ")\"/> </div> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -622,16 +622,14 @@ function LoadDoAskView() {
     });
 }
 
-document.getelemmentbyid
-
 var Counter;
-function startListener(data, id, nom) {
+function startListener(data, nom, id) {
     var newaudio = "<div><input type='hidden' value='" + id + "' /><h3>" + nom + "</h3><audio id=\"audio\" class=\"listener\" controls=\"controls\" buffered preload=\"none\"> <source src=\"audio/" + data + "\" type=\"audio/mp3\" />Votre navigateur n'est pas compatible </audio></div>";
     $("#listener").empty();
     $("#listener").append(newaudio);
     var audio = document.getElementById("audio");
     audio.play();
-    Counter = setInterval(CountTime, 10000);
+    Counter = setInterval(CountTime(id), 10000);
 }
 //test tiens antho modifie
 
@@ -640,15 +638,37 @@ function StopTime(audio) {
 }
 
 
-function CountTime() {
+function CountTime(IdUserAudio) {
     var audio = document.getElementById("audio");
     if (audio.ended) {
         StopTime(audio);
     }
-//    var time = "<label class='affichage'>" + audio.currentTime + "</label></br>";
-//    $("#Container").append(time);
+    InsertTempsUserAudio(IdUserAudio, audio.currentTime);
+
+    var time = "<label class='affichage'>" + audio.currentTime + "</label></br>";
+    $("#Container").append(time);
 }
 
+function InsertTempsUserAudio(IdUserAudio, Temps){
+    alert(IdUserAudio);
+    var URL = "php/WSController.php?ws=Library&action=UpdateAudioUser";
+    var params = {
+        'IdUserAudio': IdUserAudio,
+        'Temps': Temps
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data : params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            alert(data);
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
 
 function LoadAdminAudio() {
     var URL = "php/WSController.php?ws=Library&action=GetLibrary";

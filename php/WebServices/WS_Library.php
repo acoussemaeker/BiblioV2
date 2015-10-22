@@ -10,8 +10,11 @@ include '/Database/db_connect.php';
 
 const PARAM_ACTION = 'action';
 const PARAM_AudioID= 'AudioID';
+const PARAM_IdUserAudio= 'IdUserAudio';
+const PARAM_Temps ='Temps';
 const GET_Library = "GetLibrary";
 const GET_Library_Client = "GetLibraryClient";
+const UPDATE_AudioUser = "UpdateAudioUser";
 const ADD_AudioUser ="AddAudioUser";
 const DELETE_AudioUser ="DeleteAudioUser";
 const DELETE_Audio = "DeleteAudio";
@@ -20,6 +23,7 @@ const SQL_GET_LIBRARY_CLIENT ="SELECT useraudio.Id UserAudio, audio.Id, Nom, Emp
 const SQL_CREATE_AUDIOUSER ="INSERT INTO useraudio(UserId, AudioID) VALUES ('%s', '%s')";
 const SQL_DELETE_AUDIOUSER ="DELETE FROM useraudio WHERE UserId='%s' AND Id='%s'";
 const SQL_DELETE_AUDIO ="DELETE FROM audio WHERE ID='%s'";
+const SQL_UPDATE_AUDIOUSER ="UPDATE useraudio SET Temps='%s' WHERE Id = '%s'";
 
 class WS_Library implements IWebServiciable {
 
@@ -45,6 +49,8 @@ class WS_Library implements IWebServiciable {
                 return$this->DeleteAudioUser();
             case DELETE_Audio:
                 return$this->DeleteAudio();
+            case UPDATE_AudioUser:
+                return$this->UPDATE_AudioUser();
             default:
                 Helper::ThrowAccessDenied();
         }
@@ -94,6 +100,16 @@ class WS_Library implements IWebServiciable {
         MySQL::Execute(
             $toto =sprintf(SQL_DELETE_AUDIO,
                 $_REQUEST[PARAM_AudioID]
+            ));
+        return true;
+    }
+
+    private function UPDATE_AudioUser(){
+        MySQL::Execute(
+            sprintf(SQL_UPDATE_AUDIOUSER,
+                $_REQUEST[PARAM_Temps],
+                $_REQUEST[PARAM_IdUserAudio]
+
             ));
         return true;
     }
