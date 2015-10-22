@@ -25,6 +25,7 @@ const SQL_GET_ALL ="SELECT Id, Pseudo, Password, Mail, Grade FROM user";
 const SQL_GET_User = "SELECT Id, Pseudo, Password, Mail, Grade FROM user WHERE Pseudo= '%s'";
 const SQL_UPGRADE_User = "UPDATE user SET Pseudo='%s',Password='%s',Mail='%s' WHERE Id= '%d'";
 const SQL_CREATE_User = "INSERT INTO user(Pseudo, Password, Mail, Grade) VALUES ('%s', '%s', '%s', '0')";
+const SQL_DELETE_User = "";
 
 class WS_User implements IWebServiciable {
 

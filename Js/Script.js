@@ -701,7 +701,31 @@ function LoadDataAdminUser(){
             var dataa = JSON.parse(data);
             $('#ListUsers').empty();
             for (var t in dataa) {
-                $('#ListUsers').append("<tr><td>"+dataa[t].Pseudo+"</td><td>"+dataa[t].Mail+"</td><td>"+dataa[t].Grade+"</td><td><input type=\"button\" class=\"btn btn-danger\" value=\"degage salle truit\" /></td></tr>");
+                $('#ListUsers').append("<tr><td>"+dataa[t].Pseudo+"</td><td>"+dataa[t].Mail+"</td><td>"+dataa[t].Grade+"</td><td><input type=\"button\" class=\"btn btn-danger\" value=\"degage salle truit\" onclick=\"DeleteUser("+dataa[t].Id+")\"/></td></tr>");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function DeleteUser(data){
+    var URL = "php/WSController.php?ws=user&action=DeleteUser";
+    var params = {
+        'AudioID' : data
+    };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data: params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == "true"){
+                alert ("User Supprimer");
+            }
+            else{
+                alert("Erreur dans la suppression");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
