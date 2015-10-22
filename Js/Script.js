@@ -554,8 +554,10 @@ function LaodDataPersonalLibrary() {
         success: function (data) {// si la requête est un succès
             var dataa = JSON.parse(data);
             $('#listLibrary').empty();
+            
             for (var t in dataa) {
-                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser(" + dataa[t].Id + ")\"/> </div> </td> </tr>");
+//                alert(dataa[t].UserAudio);
+                $('#ListLibrary').append("<tr><td>" + dataa[t].Emplacement + "</td><td>" + dataa[t].Nom + "</td><td><button onclick=\"startListener('" + dataa[t].Emplacement + "', '" + dataa[t].UserAudio + "', '" + dataa[t].Nom + "')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td><div class=\"btn-group\" role=\"group\" ><input type=\"button\" class=\"btn btn-danger\" value=\"Supprimer de la Bibliotheque personnel\" onclick=\"DeleteAudioUser(" + dataa[t].Id + ")\"/> </div> </td> </tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -620,8 +622,8 @@ function LoadDoAskView() {
     });
 }
 var Counter;
-function startListener(data) {
-    var newaudio = "<audio id=\"audio\" class=\"listener\" controls=\"controls\" buffered preload=\"none\"> <source src=\"audio/" + data + "\" type=\"audio/mp3\" />Votre navigateur n'est pas compatible </audio>";
+function startListener(data, id, nom) {
+    var newaudio = "<div><input type='hidden' value='" + id + "' /><h3>" + nom + "</h3><audio id=\"audio\" class=\"listener\" controls=\"controls\" buffered preload=\"none\"> <source src=\"audio/" + data + "\" type=\"audio/mp3\" />Votre navigateur n'est pas compatible </audio></div>";
     $("#listener").empty();
     $("#listener").append(newaudio);
     var audio = document.getElementById("audio");
