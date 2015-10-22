@@ -9,6 +9,7 @@ require 'IWebServiciable.php';
 include '/Database/db_connect.php';
 
 const PARAM_ACTION = 'action';
+const PARAM_ID ='AudioID';
 const PARAM_Login ='Login';
 const PARAM_Password ='Password';
 const PARAM_RePassword ='RePassword';
@@ -20,12 +21,13 @@ const Disconnect = 'Disconnect';
 const GET_All ='GetAll';
 const GET_User = 'GetUser';
 const MODIF_User = 'ModifUser';
+const Delete_User = 'DeleteUser';
 const Create_User = 'CreateUser';
 const SQL_GET_ALL ="SELECT Id, Pseudo, Password, Mail, Grade FROM user";
 const SQL_GET_User = "SELECT Id, Pseudo, Password, Mail, Grade FROM user WHERE Pseudo= '%s'";
 const SQL_UPGRADE_User = "UPDATE user SET Pseudo='%s',Password='%s',Mail='%s' WHERE Id= '%d'";
 const SQL_CREATE_User = "INSERT INTO user(Pseudo, Password, Mail, Grade) VALUES ('%s', '%s', '%s', '0')";
-const SQL_DELETE_User = "";
+const SQL_DELETE_User = "DELETE FROM user WHERE Id = '%s'";
 
 class WS_User implements IWebServiciable {
 
@@ -52,6 +54,8 @@ class WS_User implements IWebServiciable {
                 return $this->ModifUser();
             case Create_User:
                 return $this->CreateUser();
+            case Delete_User:
+                return $this->DeleteUser();
             case GET_All:
                 return $this->GetAll();
             default:
@@ -168,6 +172,15 @@ class WS_User implements IWebServiciable {
         $result = MySQL::GetResult()->fetchAll();
 
         return $result;
+    }
+
+    private function DeleteUser(){
+        MySQL::Execute(
+            sprintf(SQL_DELETE_User,
+            $_REQUEST[PARAM_ID]
+            ));
+
+        return true;
     }
 
     public function doPut() {
