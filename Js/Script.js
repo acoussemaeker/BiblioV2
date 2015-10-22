@@ -264,9 +264,10 @@ function ModifProfilUserData(){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             if (data == "false") {
-                alert("erreur dans la connexion");
+                alert("Erreur dans la Modification");
             } else {
-                alert(data);
+                alert("Profil Modifier, Veuillez vous reconnecter");
+                Disconnect();
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -389,6 +390,7 @@ function DeletePlaylist(data){
         success: function (data) {// si la requête est un succès
             if(data == "true"){
                 alert ("Playlist Supprimer de votre Bibliotheque")
+                LoadGestionPlaylist();
             }
             else{
                 alert("Erreur dans l'enregistrement")
@@ -467,10 +469,10 @@ function AddAudioUser(data){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             if(data == "true"){
-                alert ("Audio ajouter")
+                alert ("Audio ajouter");
             }
             else{
-                alert("Erreur dans l'enregistrement")
+                alert("Erreur dans l'enregistrement");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -491,10 +493,10 @@ function AddAudioUser(data){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             if(data == "true"){
-                alert ("Audio ajouter")
+                alert ("Audio ajouter");
             }
             else{
-                alert("Erreur dans l'enregistrement")
+                alert("Erreur dans l'enregistrement");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -515,10 +517,11 @@ function DeleteAudioUser(data){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             if(data == "true"){
-                alert ("Audio Supprimer de votre Bibliotheque")
+                alert ("Audio Supprimer de votre Bibliotheque");
+                LoadPersonalLibrary();
             }
             else{
-                alert("Erreur dans l'enregistrement")
+                alert("Erreur dans l'enregistrement");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -591,10 +594,11 @@ function CreateNewPlaylist(){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             if(data == "true"){
-                alert ("Playlist Créée")
+                alert ("Playlist Créée");
+                LoadGestionPlaylist();
             }
             else{
-                alert("Erreur dans l'enregistrement")
+                alert("Erreur dans l'enregistrement");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
@@ -659,10 +663,10 @@ function DeleteAudio(data){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             if(data == "true"){
-                alert ("Audio Supprimer de la Bibliotheque")
+                alert ("Audio Supprimer de la Bibliotheque");
             }
             else{
-                alert("Erreur dans l'enregistrement")
+                alert("Erreur dans l'enregistrement");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete

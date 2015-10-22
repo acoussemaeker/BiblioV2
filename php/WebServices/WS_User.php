@@ -116,7 +116,7 @@ class WS_User implements IWebServiciable {
             return true;
         }
         else{
-            return false;
+            return false;;
         }
     }
 
