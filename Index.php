@@ -16,5 +16,5 @@
 </html>
 
 <?php
-include "php/Database/db_credentials.php";
-include "php/ViewController.php";
+//include "php/Database/db_credentials.php";
+//include "php/ViewController.php";

@@ -10,8 +10,6 @@ function Start() {
         type: 'POST',
         success: function (data) {// si la requête est un succès
             $("#header").empty(); // on vide le div
-            $("#contain").empty();
-            $("#LeftMenu").empty();
             $("#header").append(data); // on met dans le div le résultat de la requête ajax
             LoadLeftMenuView();
         },

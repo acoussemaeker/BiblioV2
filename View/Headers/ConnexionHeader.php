@@ -1,12 +1,8 @@
-<?php
-
-?>
-
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">
-                <img alt="Bibliothèque Audio V2" src="...">
+                <img alt="Bibliothèque Audio V2">
             </a>
             <form class="navbar-form navbar-right" >
                 <div class="form-group">
