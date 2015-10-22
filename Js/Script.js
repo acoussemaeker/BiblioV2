@@ -639,7 +639,6 @@ function LoadAdminAudio(){
         type: 'POST',
         success: function (data) {// si la requête est un succès
             var dataa = JSON.parse(data);
-            $('#listLibrary').empty();
             $('#ListLibrary').empty();
             for (var t in dataa) {
                 $('#ListLibrary').append("<tr><td>"+dataa[t].Emplacement+"</td><td>"+dataa[t].Nom+"</td><td><button onclick=\"startListener('"+dataa[t].Emplacement+"')\" type=\"button\"><span class=\"glyphicon glyphicon-play\" aria-hidden=\"true\"></span></button></td> <td> <input type=\"button\" class=\"btn btn-success\" value=\"Suprimmer de la Bibliotheque Commune\" onclick=\"DeleteAudio("+dataa[t].Id+")\"/> </td> </tr>");
@@ -667,6 +666,42 @@ function DeleteAudio(data){
             }
             else{
                 alert("Erreur dans l'enregistrement");
+            }
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function LoadAdminUser(){
+    var URL = "View/Admin/GestionUser.php"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            $("#contain").empty();
+            $("#contain").append(data); // on met dans le div le résultat de la requête ajax
+            LoadDataAdminUser();
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
+
+function LoadDataAdminUser(){
+    var URL = "php/WSController.php?ws=User&action=GetAll"; // on recuperer l' adresse du lien
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            var dataa = JSON.parse(data);
+            $('#ListUsers').empty();
+            for (var t in dataa) {
+                $('#ListUsers').append("<tr><td>"+dataa[t].Pseudo+"</td><td>"+dataa[t].Mail+"</td><td>"+dataa[t].Grade+"</td><td><input type=\"button\" class=\"btn btn-danger\" value=\"degage salle truit\" /></td></tr>");
             }
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete

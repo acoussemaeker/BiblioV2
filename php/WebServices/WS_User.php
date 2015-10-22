@@ -17,9 +17,11 @@ const PARAM_ReMail ='ReMail';
 const GET_Connect = 'Connect';
 const Check = 'Check';
 const Disconnect = 'Disconnect';
+const GET_All ='GetAll';
 const GET_User = 'GetUser';
 const MODIF_User = 'ModifUser';
 const Create_User = 'CreateUser';
+const SQL_GET_ALL ="SELECT Id, Pseudo, Password, Mail, Grade FROM user";
 const SQL_GET_User = "SELECT Id, Pseudo, Password, Mail, Grade FROM user WHERE Pseudo= '%s'";
 const SQL_UPGRADE_User = "UPDATE user SET Pseudo='%s',Password='%s',Mail='%s' WHERE Id= '%d'";
 const SQL_CREATE_User = "INSERT INTO user(Pseudo, Password, Mail, Grade) VALUES ('%s', '%s', '%s', '0')";
@@ -49,6 +51,8 @@ class WS_User implements IWebServiciable {
                 return $this->ModifUser();
             case Create_User:
                 return $this->CreateUser();
+            case GET_All:
+                return $this->GetAll();
             default:
                 Helper::ThrowAccessDenied();
                 break;
@@ -156,6 +160,13 @@ class WS_User implements IWebServiciable {
         }else{
             return true;
         }
+    }
+
+    private function GetAll(){
+        MySQL::Execute(SQL_GET_ALL);
+        $result = MySQL::GetResult()->fetchAll();
+
+        return $result;
     }
 
     public function doPut() {

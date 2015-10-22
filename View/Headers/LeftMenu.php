@@ -25,7 +25,7 @@
             <br/>
             <ul class = "nav nav-divider nav-stacked">
                 <li class = "btn-info"><a href = "#" onclick = "">Gestion des demandes</a></li>
-                <li class = "btn-info"><a href = "#" onclick = ""> Gestion des utilisateurs</a></li>
+                <li class = "btn-info"><a href = "#" onclick = "LoadAdminUser()"> Gestion des utilisateurs</a></li>
                 <li class = "btn-info"><a href = "#" onclick = "LoadAdminAudio()"> Gestion des Fichiers audio</a></li>
             </ul>';
                 break;
