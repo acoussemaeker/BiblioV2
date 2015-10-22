@@ -31,12 +31,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Script.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Script.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Js/Script.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.9637" vertical-offset="10455" max-vertical-offset="12886">
-              <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+            <state vertical-scroll-proportion="38.275864" vertical-offset="10800" max-vertical-offset="12971">
+              <caret line="570" column="45" selection-start-line="570" selection-start-column="45" selection-end-line="570" selection-end-column="45" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WS_Playlist.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-24.0" vertical-offset="668" max-vertical-offset="1564">
+              <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+              <folding>
+                <marker date="1445378769350" expanded="true" signature="395:448" placeholder="INSERT INTO ..." />
+                <marker date="1445378769350" expanded="true" signature="476:530" placeholder="SELECT Id, U..playlist..." />
+                <marker date="1445378769350" expanded="true" signature="561:595" placeholder="DELETE FROM ..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -44,7 +58,7 @@
       <file leaf-file-name="ConnexionHeader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/View/Headers/ConnexionHeader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
+            <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
               <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
               <folding />
             </state>
@@ -54,7 +68,7 @@
       <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="442">
+            <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="442">
               <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
               <folding />
             </state>
@@ -64,7 +78,7 @@
       <file leaf-file-name="WS_User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-21.692308" vertical-offset="2530" max-vertical-offset="3400">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2530" max-vertical-offset="3400">
               <caret line="182" column="20" selection-start-line="182" selection-start-column="20" selection-end-line="182" selection-end-column="20" />
               <folding>
                 <marker date="1445504535328" expanded="true" signature="632:682" placeholder="SELECT Id, P..user..." />
@@ -77,17 +91,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WS_Library.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WS_Library.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Library.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.8076923" vertical-offset="728" max-vertical-offset="1955">
-              <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.3908046" vertical-offset="0" max-vertical-offset="1955">
+              <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
               <folding>
-                <marker date="1445506170830" expanded="true" signature="442:480" placeholder="SELECT Id, N..audio..." />
-                <marker date="1445506170830" expanded="true" signature="514:663" placeholder="SELECT usera..audio..." />
-                <marker date="1445506170830" expanded="true" signature="695:753" placeholder="INSERT INTO ..." />
-                <marker date="1445506170830" expanded="true" signature="785:841" placeholder="DELETE FROM ..." />
-                <marker date="1445506170830" expanded="true" signature="869:900" placeholder="DELETE FROM ..." />
+                <marker date="1445521610848" expanded="true" signature="442:480" placeholder="SELECT Id, N..audio..." />
+                <marker date="1445521610848" expanded="true" signature="514:663" placeholder="SELECT usera..audio..." />
+                <marker date="1445521610848" expanded="true" signature="695:753" placeholder="INSERT INTO ..." />
+                <marker date="1445521610848" expanded="true" signature="785:836" placeholder="DELETE FROM ..." />
+                <marker date="1445521610848" expanded="true" signature="864:895" placeholder="DELETE FROM ..." />
               </folding>
             </state>
           </provider>
@@ -139,10 +153,10 @@
         <option value="$PROJECT_DIR$/View/Headers/LeftMenu.php" />
         <option value="$PROJECT_DIR$/View/Admin/GestionUser.php" />
         <option value="$PROJECT_DIR$/php/WebServices/WS_User.php" />
-        <option value="$PROJECT_DIR$/php/WebServices/WS_Library.php" />
         <option value="$PROJECT_DIR$/Index.php" />
         <option value="$PROJECT_DIR$/View/Headers/ConnexionHeader.php" />
         <option value="$PROJECT_DIR$/Js/Script.js" />
+        <option value="$PROJECT_DIR$/php/WebServices/WS_Library.php" />
       </list>
     </option>
   </component>
@@ -376,6 +390,9 @@
       <BehatRunner />
       <method />
     </configuration>
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -383,9 +400,6 @@
       <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
       <method />
     </configuration>
     <list size="0" />
@@ -413,19 +427,19 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15671642" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15831557" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32900432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -505,7 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="323">
           <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -551,7 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="340">
           <caret line="14" column="46" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -596,7 +608,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="153" max-vertical-offset="340">
           <caret line="14" column="46" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="46" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -754,20 +765,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="694" max-vertical-offset="1564">
-          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
-          <folding>
-            <marker date="1445378769350" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1445378769350" expanded="true" signature="-1:-1" placeholder="SELECT Id, U..playlist..." />
-            <marker date="1445378769350" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1445378769350" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1445378769350" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/View/Users/ModifPlaylist.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="73" max-vertical-offset="969">
@@ -780,7 +777,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="357">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,7 +784,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="238">
           <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -796,10 +791,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.653847" vertical-offset="0" max-vertical-offset="765">
           <caret line="27" column="79" selection-start-line="27" selection-start-column="79" selection-end-line="27" selection-end-column="79" />
-          <folding>
-            <marker date="1445498006350" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1445498006350" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -807,13 +798,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="306">
           <caret line="10" column="28" selection-start-line="10" selection-start-column="28" selection-end-line="10" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/php/WebServices/WS_User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-21.692308" vertical-offset="2530" max-vertical-offset="3400">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2530" max-vertical-offset="3400">
           <caret line="182" column="20" selection-start-line="182" selection-start-column="20" selection-end-line="182" selection-end-column="20" />
           <folding>
             <marker date="1445504535328" expanded="true" signature="632:682" placeholder="SELECT Id, P..user..." />
@@ -825,23 +815,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Library.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.8076923" vertical-offset="728" max-vertical-offset="1955">
-          <caret line="37" column="30" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
-          <folding>
-            <marker date="1445506170830" expanded="true" signature="442:480" placeholder="SELECT Id, N..audio..." />
-            <marker date="1445506170830" expanded="true" signature="514:663" placeholder="SELECT usera..audio..." />
-            <marker date="1445506170830" expanded="true" signature="695:753" placeholder="INSERT INTO ..." />
-            <marker date="1445506170830" expanded="true" signature="785:841" placeholder="DELETE FROM ..." />
-            <marker date="1445506170830" expanded="true" signature="869:900" placeholder="DELETE FROM ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="442">
+        <state vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="442">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="30" selection-end-line="10" selection-end-column="30" />
           <folding />
         </state>
@@ -849,7 +825,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/View/Headers/ConnexionHeader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
+        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="374">
           <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
           <folding />
         </state>
@@ -857,9 +833,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Js/Script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.9637" vertical-offset="10455" max-vertical-offset="12886">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="10" selection-end-line="14" selection-end-column="10" />
+        <state vertical-scroll-proportion="38.275864" vertical-offset="10800" max-vertical-offset="12971">
+          <caret line="570" column="45" selection-start-line="570" selection-start-column="45" selection-end-line="570" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Playlist.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.0" vertical-offset="668" max-vertical-offset="1564">
+          <caret line="76" column="19" selection-start-line="76" selection-start-column="19" selection-end-line="76" selection-end-column="19" />
+          <folding>
+            <marker date="1445378769350" expanded="true" signature="395:448" placeholder="INSERT INTO ..." />
+            <marker date="1445378769350" expanded="true" signature="476:530" placeholder="SELECT Id, U..playlist..." />
+            <marker date="1445378769350" expanded="true" signature="561:595" placeholder="DELETE FROM ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/php/WebServices/WS_Library.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3908046" vertical-offset="0" max-vertical-offset="1955">
+          <caret line="20" column="75" selection-start-line="20" selection-start-column="75" selection-end-line="20" selection-end-column="75" />
+          <folding>
+            <marker date="1445521610848" expanded="true" signature="442:480" placeholder="SELECT Id, N..audio..." />
+            <marker date="1445521610848" expanded="true" signature="514:663" placeholder="SELECT usera..audio..." />
+            <marker date="1445521610848" expanded="true" signature="695:753" placeholder="INSERT INTO ..." />
+            <marker date="1445521610848" expanded="true" signature="785:836" placeholder="DELETE FROM ..." />
+            <marker date="1445521610848" expanded="true" signature="864:895" placeholder="DELETE FROM ..." />
+          </folding>
         </state>
       </provider>
     </entry>

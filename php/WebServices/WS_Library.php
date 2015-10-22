@@ -18,7 +18,7 @@ const DELETE_Audio = "DeleteAudio";
 const SQL_GET_LIBRARY ="SELECT Id, Nom, Emplacement FROM audio";
 const SQL_GET_LIBRARY_CLIENT ="SELECT useraudio.Id UserAudio, audio.Id, Nom, Emplacement FROM audio LEFT JOIN useraudio On audio.Id = useraudio.AudioId WHERE useraudio.UserId= '%s'";
 const SQL_CREATE_AUDIOUSER ="INSERT INTO useraudio(UserId, AudioID) VALUES ('%s', '%s')";
-const SQL_DELETE_AUDIOUSER ="DELETE FROM useraudio WHERE UserId='%s' AND AudioID='%s'";
+const SQL_DELETE_AUDIOUSER ="DELETE FROM useraudio WHERE UserId='%s' AND Id='%s'";
 const SQL_DELETE_AUDIO ="DELETE FROM audio WHERE ID='%s'";
 
 class WS_Library implements IWebServiciable {
