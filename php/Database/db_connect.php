@@ -6,7 +6,7 @@
  * Time: 15:51
  */
 
-	include_once('db_credentials.php');
+	include_once('db_credantials.php');
 
 	class MySQL
     {

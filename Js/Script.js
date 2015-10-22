@@ -624,12 +624,12 @@ function LoadDoAskView() {
 
 var Counter;
 function startListener(data, nom, id) {
-    var newaudio = "<div><input type='hidden' value='" + id + "' /><h3>" + nom + "</h3><audio id=\"audio\" class=\"listener\" controls=\"controls\" buffered preload=\"none\"> <source src=\"audio/" + data + "\" type=\"audio/mp3\" />Votre navigateur n'est pas compatible </audio></div>";
+    var newaudio = "<div><input type='hidden' id='id' value='" + id + "' /><h3>" + nom + "</h3><audio id=\"audio\" class=\"listener\" controls=\"controls\" buffered preload=\"none\"> <source src=\"audio/" + data + "\" type=\"audio/mp3\" />Votre navigateur n'est pas compatible </audio></div>";
     $("#listener").empty();
     $("#listener").append(newaudio);
     var audio = document.getElementById("audio");
     audio.play();
-    Counter = setInterval(CountTime(id), 10000);
+    Counter = setInterval(CountTime, 10000);
 }
 //test tiens antho modifie
 
@@ -638,19 +638,18 @@ function StopTime(audio) {
 }
 
 
-function CountTime(IdUserAudio) {
+function CountTime() {
+    var id = document.getElementById("id").value;
     var audio = document.getElementById("audio");
     if (audio.ended) {
         StopTime(audio);
     }
-    InsertTempsUserAudio(IdUserAudio, audio.currentTime);
-
-    var time = "<label class='affichage'>" + audio.currentTime + "</label></br>";
-    $("#Container").append(time);
+    InsertTempsUserAudio(id, audio.currentTime);
+    //var time = "<label class='affichage'>" + audio.currentTime + "</label></br>";
+    //$("#Container").append(time);
 }
 
 function InsertTempsUserAudio(IdUserAudio, Temps){
-    alert(IdUserAudio);
     var URL = "php/WSController.php?ws=Library&action=UpdateAudioUser";
     var params = {
         'IdUserAudio': IdUserAudio,
@@ -663,7 +662,6 @@ function InsertTempsUserAudio(IdUserAudio, Temps){
         dataType: 'text',
         type: 'POST',
         success: function (data) {// si la requête est un succès
-            alert(data);
         },
         error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
         }
@@ -774,4 +772,32 @@ function DeleteUser(data) {
     });
 }
 
+function createdatabase(){
+
+    var URL = "php/CreateDatabase.php"; // on recuperer l' adresse du lien
+    var params = {
+        'Nom': document.getElementById("nom").value,
+        'Password': document.getElementById("password").value,
+        'Adresse': document.getElementById("adresse").value,
+        'Login': document.getElementById("login").value
+        };
+    $.ajax({// ajax
+        url: URL, // url de la page à charger
+        data : params,
+        cache: false, // pas de mise en cache
+        dataType: 'text',
+        type: 'POST',
+        success: function (data) {// si la requête est un succès
+            if(data == ""){
+                alert('Database créer, rechargez la page pour arriver sur le site');
+                Start();
+            }else{
+                alert("erreur");
+            }
+
+        },
+        error: function (XMLHttpRequest, textStatus, errorThrows) { // erreur durant la requete
+        }
+    });
+}
 
